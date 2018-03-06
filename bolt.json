@@ -1,0 +1,605 @@
+{
+	"bolts": [{
+			"size": "#0",
+			"major_dia": 0.0600,
+			"tpi": [{
+				"number": 80,
+				"minor_dia": 0.0447,
+				"75_tap_drill": "3/64\"",
+				"75_tap_decimal": 0.0469,
+				"50_tap_drill": "55",
+				"50_tap_decimal": 0.0520
+			}],
+			"close_drill": "52",
+			"close_decimal": 0.0635,
+			"free_drill": "50",
+			"free_decimal": 0.0700,
+			"head_size": ""
+		},
+		{
+			"size": "#1",
+			"major_dia": 0.0730,
+			"tpi": [{
+				"number": 64,
+				"minor_dia": 0.0538,
+				"75_tap_drill": "53",
+				"75_tap_decimal": 0.0595,
+				"50_tap_drill": "1/16\"",
+				"50_tap_decimal": 0.0625
+			},{
+				"number": 72,
+				"minor_dia": 0.0560,
+				"75_tap_drill": "53",
+				"75_tap_decimal": 0.0595,
+				"50_tap_drill": "52",
+				"50_tap_decimal": 0.0635
+				}],
+			"close_drill": "48",
+			"close_decimal": 0.0760,
+			"free_drill": "46",
+			"free_decimal": 0.0810,
+			"head_size": ""
+		},
+		{
+			"size": "#2",
+			"major_dia": 0.0860,
+			"tpi": [{
+				"number": 56,
+				"minor_dia": 0.0641,
+				"75_tap_drill": "50",
+				"75_tap_decimal": 0.0700,
+				"50_tap_drill": "49",
+				"50_tap_decimal": 0.0730
+			},{
+				"number": 64,
+				"minor_dia": 0.0668,
+				"75_tap_drill": "50",
+				"75_tap_decimal": 0.0700,
+				"50_tap_drill": "48",
+				"50_tap_decimal": 0.0760
+				}],
+			"close_drill": "43",
+			"close_decimal": 0.0890,
+			"free_drill": "41",
+			"free_decimal": 0.0960,
+			"head_size": ""
+		},
+		{
+			"size": "#3",
+			"major_dia": 0.0990,
+			"tpi": [{
+				"number": 48,
+				"minor_dia": 0.0734,
+				"75_tap_drill": "47",
+				"75_tap_decimal": 0.0785,
+				"50_tap_drill": "44",
+				"50_tap_decimal": 0.0860
+			},{
+				"number": 56,
+				"minor_dia": 0.0771,
+				"75_tap_drill": "45",
+				"75_tap_decimal": 0.0820,
+				"50_tap_drill": "43",
+				"50_tap_decimal": 0.0890
+				}],
+			"close_drill": "37",
+			"close_decimal": 0.1040,
+			"free_drill": "35",
+			"free_decimal": 0.1100,
+			"head_size": ""
+		},
+		{
+			"size": "#4",
+			"major_dia": 0.1120,
+			"tpi": [{
+				"number": 40,
+				"minor_dia": 0.0813,
+				"75_tap_drill": "43",
+				"75_tap_decimal": 0.0890,
+				"50_tap_drill": "41",
+				"50_tap_decimal": 0.0960
+			},{
+				"number": 48,
+				"minor_dia": 0.0864,
+				"75_tap_drill": "42",
+				"75_tap_decimal": 0.0935,
+				"50_tap_drill": "40",
+				"50_tap_decimal": 0.0980
+				}],
+			"close_drill": "32",
+			"close_decimal": 0.1160,
+			"free_drill": "30",
+			"free_decimal": 0.1285,
+			"head_size": ""
+		},
+		{
+			"size": "#5",
+			"major_dia": 0.125,
+			"tpi": [{
+				"number": 40,
+				"minor_dia": 0.0943,
+				"75_tap_drill": "38",
+				"75_tap_decimal": 0.1015,
+				"50_tap_drill": "7/64\"",
+				"50_tap_decimal": 0.1094
+			},{
+				"number": 44,
+				"minor_dia": 0.0971,
+				"75_tap_drill": "37",
+				"75_tap_decimal": 0.1040,
+				"50_tap_drill": "35",
+				"50_tap_decimal": 0.1100
+				}],
+			"close_drill": "30",
+			"close_decimal": 0.1285,
+			"free_drill": "29",
+			"free_decimal": 0.1360,
+			"head_size": ""
+		},
+		{
+			"size": "#6",
+			"major_dia": 0.138,
+			"tpi": [{
+				"number": 32,
+				"minor_dia": 0.0997,
+				"75_tap_drill": "36",
+				"75_tap_decimal": 0.1065,
+				"50_tap_drill": "32",
+				"50_tap_decimal": 0.1160
+			},{
+				"number": 40,
+				"minor_dia": 0.1073,
+				"75_tap_drill": "33",
+				"75_tap_decimal": 0.1130,
+				"50_tap_drill": "31",
+				"50_tap_decimal": 0.1200
+				}],
+			"close_drill": "27",
+			"close_decimal": 0.1440,
+			"free_drill": "25",
+			"free_decimal": 0.1495,
+			"head_size": "1/4\""
+		},
+		{
+			"size": "#8",
+			"major_dia": 0.1640,
+			"tpi": [{
+				"number": 32,
+				"minor_dia": 0.1257,
+				"75_tap_drill": "29",
+				"75_tap_decimal": 0.1360,
+				"50_tap_drill": "27",
+				"50_tap_decimal": 0.1440
+			},{
+				"number": 36,
+				"minor_dia": 0.1299,
+				"75_tap_drill": "29",
+				"75_tap_decimal": 0.1360,
+				"50_tap_drill": "26",
+				"50_tap_decimal": 0.1470
+				}],
+			"close_drill": "18",
+			"close_decimal": 0.1695,
+			"free_drill": "16",
+			"free_decimal": 0.1770,
+			"head_size": "1/4\""
+		},
+		{
+			"size": "#10",
+			"major_dia": 0.1900,
+			"tpi": [{
+				"number": 24,
+				"minor_dia": 0.1389,
+				"75_tap_drill": "25",
+				"75_tap_decimal": 0.1495,
+				"50_tap_drill": "20",
+				"50_tap_decimal": 0.1610
+			},{
+				"number": 32,
+				"minor_dia": 0.1517,
+				"75_tap_drill": "21",
+				"75_tap_decimal": 0.1590,
+				"50_tap_drill": "18",
+				"50_tap_decimal": 0.1695
+				}],
+			"close_drill": "9",
+			"close_decimal": 0.1960,
+			"free_drill": "7",
+			"free_decimal": 0.2010,
+			"head_size": "5/16\""
+		},
+		{
+			"size": "#12",
+			"major_dia": 0.2160,
+			"tpi": [{
+				"number": 24,
+				"minor_dia": 0.1649,
+				"75_tap_drill": "16",
+				"75_tap_decimal": 0.1770,
+				"50_tap_drill": "12",
+				"50_tap_decimal": 0.1890
+			},{
+				"number": 28,
+				"minor_dia": 0.1722,
+				"75_tap_drill": "14",
+				"75_tap_decimal": 0.1820,
+				"50_tap_drill": "10",
+				"50_tap_decimal": 0.1935
+				},{
+				"number": 32,
+				"minor_dia": 0.1777,
+				"75_tap_drill": "13",
+				"75_tap_decimal": 0.1850,
+				"50_tap_drill": "9",
+				"50_tap_decimal": 0.1960
+				}],
+			"close_drill": "2",
+			"close_decimal": 0.2210,
+			"free_drill": "1",
+			"free_decimal": 0.2280,
+			"head_size": "5/16\""
+		},
+		{
+			"size": "1/4\"",
+			"major_dia": 0.2500,
+			"tpi": [{
+				"number": 20,
+				"minor_dia": 0.1887,
+				"75_tap_drill": "7",
+				"75_tap_decimal": 0.2010,
+				"50_tap_drill": "7/32\"",
+				"50_tap_decimal": 0.2188
+			},{
+				"number": 28,
+				"minor_dia": 0.2062,
+				"75_tap_drill": "3",
+				"75_tap_decimal": 0.2130,
+				"50_tap_drill": "1",
+				"50_tap_decimal": 0.2280
+				},{
+				"number": 32,
+				"minor_dia": 0.2117,
+				"75_tap_drill": "7/32\"",
+				"75_tap_decimal": 0.2188,
+				"50_tap_drill": "1",
+				"50_tap_decimal": 0.2280
+				}],
+			"close_drill": "F",
+			"close_decimal": 0.2570,
+			"free_drill": "H",
+			"free_decimal": 0.2660,
+			"head_size": "7/16\" or 3/8\""
+		},
+		{
+			"size": "5/16\"",
+			"major_dia": 0.3125,
+			"tpi": [{
+				"number": 18,
+				"minor_dia": 0.2443,
+				"75_tap_drill": "F",
+				"75_tap_decimal": 0.2570,
+				"50_tap_drill": "J",
+				"50_tap_decimal": 0.2770
+			},{
+				"number": 24,
+				"minor_dia": 0.2614,
+				"75_tap_drill": "I",
+				"75_tap_decimal": 0.2720,
+				"50_tap_drill": "9/32\"",
+				"50_tap_decimal": 0.2812
+				},{
+				"number": 32,
+				"minor_dia": 0.2742,
+				"75_tap_drill": "9/32\"",
+				"75_tap_decimal": 0.2812,
+				"50_tap_drill": "L",
+				"50_tap_decimal": 0.2900
+				}],
+			"close_drill": "P",
+			"close_decimal": 0.3230,
+			"free_drill": "Q",
+			"free_decimal": 0.3320,
+			"head_size": "1/2\""
+		},
+		{
+			"size": "3/8\"",
+			"major_dia": 0.3750,
+			"tpi": [{
+				"number": 16,
+				"minor_dia": 0.2983,
+				"75_tap_drill": "5/16\"",
+				"75_tap_decimal": 0.3125,
+				"50_tap_drill": "Q",
+				"50_tap_decimal": 0.3320
+			},{
+				"number": 24,
+				"minor_dia": 0.3239,
+				"75_tap_drill": "Q",
+				"75_tap_decimal": 0.3320,
+				"50_tap_drill": "S",
+				"50_tap_decimal": 0.3480
+				},{
+				"number": 32,
+				"minor_dia": 0.3367,
+				"75_tap_drill": "11/32\"",
+				"75_tap_decimal": 0.3438,
+				"50_tap_drill": "T",
+				"50_tap_decimal": 0.3580
+				}],
+			"close_drill": "W",
+			"close_decimal": 0.3860,
+			"free_drill": "X",
+			"free_decimal": 0.3970,
+			"head_size": "9/16\""
+		},
+		{
+			"size": "7/16\"",
+			"major_dia": 0.4375,
+			"tpi": [{
+				"number": 14,
+				"minor_dia": 0.3499,
+				"75_tap_drill": "U",
+				"75_tap_decimal": 0.3680,
+				"50_tap_drill": "25/64\"",
+				"50_tap_decimal": 0.3906
+			},{
+				"number": 20,
+				"minor_dia": 0.3762,
+				"75_tap_drill": "25/64\"",
+				"75_tap_decimal": 0.3906,
+				"50_tap_drill": "13/32\"",
+				"50_tap_decimal": 0.4062
+				},{
+				"number": 28,
+				"minor_dia": 0.3937,
+				"75_tap_drill": "Y",
+				"75_tap_decimal": 0.4040,
+				"50_tap_drill": "Z",
+				"50_tap_decimal": 0.4130
+				}],
+			"close_drill": "29/64\"",
+			"close_decimal": 0.4531,
+			"free_drill": "15/32\"",
+			"free_decimal": 0.4687,
+			"head_size": "5/8\""
+		},
+		{
+			"size": "1/2\"",
+			"major_dia": 0.5000,
+			"tpi": [{
+				"number": 13,
+				"minor_dia": 0.4056,
+				"75_tap_drill": "27/64\"",
+				"75_tap_decimal": 0.4219,
+				"50_tap_drill": "29/64\"",
+				"50_tap_decimal": 0.4531
+			},{
+				"number": 20,
+				"minor_dia": 0.4387,
+				"75_tap_drill": "29/64\"",
+				"75_tap_decimal": 0.4531,
+				"50_tap_drill": "15/32\"",
+				"50_tap_decimal": 0.4688
+				},{
+				"number": 28,
+				"minor_dia": 0.4562,
+				"75_tap_drill": "15/32\"",
+				"75_tap_decimal": 0.4688,
+				"50_tap_drill": "15/32\"",
+				"50_tap_decimal": 0.4688
+				}],
+			"close_drill": "33/64\"",
+			"close_decimal": 0.5156,
+			"free_drill": "17/32\"",
+			"free_decimal": 0.5312,
+			"head_size": "3/4\""
+		},
+		{
+			"size": "9/16\"",
+			"major_dia": 0.5625,
+			"tpi": [{
+				"number": 12,
+				"minor_dia": 0.4603,
+				"75_tap_drill": "31/64\"",
+				"75_tap_decimal": 0.4844,
+				"50_tap_drill": "33/64\"",
+				"50_tap_decimal": 0.5156
+			},{
+				"number": 18,
+				"minor_dia": 0.4943,
+				"75_tap_drill": "33/64\"",
+				"75_tap_decimal": 0.5156,
+				"50_tap_drill": "17/32\"",
+				"50_tap_decimal": 0.5312
+				},{
+				"number": 24,
+				"minor_dia": 0.5114,
+				"75_tap_drill": "33/64\"",
+				"75_tap_decimal": 0.5156,
+				"50_tap_drill": "17/32\"",
+				"50_tap_decimal": 0.5312
+				}],
+			"close_drill": "37/64\"",
+			"close_decimal": 0.5781,
+			"free_drill": "19/32\"",
+			"free_decimal": 0.5938,
+			"head_size": "13/16\""
+		},
+		{
+			"size": "5/8\"",
+			"major_dia": 0.6250,
+			"tpi": [{
+				"number": 11,
+				"minor_dia": 0.5135,
+				"75_tap_drill": "17/32\"",
+				"75_tap_decimal": 0.5312,
+				"50_tap_drill": "9/16\"",
+				"50_tap_decimal": 0.5625
+			},{
+				"number": 18,
+				"minor_dia": 0.5568,
+				"75_tap_drill": "37/64\"",
+				"75_tap_decimal": 0.5781,
+				"50_tap_drill": "19/32\"",
+				"50_tap_decimal": 0.5938
+				},{
+				"number": 24,
+				"minor_dia": 0.5739,
+				"75_tap_drill": "37/64\"",
+				"75_tap_decimal": 0.5781,
+				"50_tap_drill": "19/32\"",
+				"50_tap_decimal": 0.5938
+				}],
+			"close_drill": "41/64\"",
+			"close_decimal": 0.6406,
+			"free_drill": "21/32\"",
+			"free_decimal": 0.6562,
+			"head_size": "15/16\""
+		},
+		{
+			"size": "11/16\"",
+			"major_dia": 0.6875,
+			"tpi": [{
+				"number": 24,
+				"minor_dia": 0.6364,
+				"75_tap_drill": "41/64\"",
+				"75_tap_decimal": 0.6406,
+				"50_tap_drill": "21/32\"",
+				"50_tap_decimal": 0.6562
+			}],
+			"close_drill": "45/64\"",
+			"close_decimal": 0.7031,
+			"free_drill": "23/32\"",
+			"free_decimal": 0.6562,
+			"head_size": ""
+		},
+		{
+			"size": "3/4\"",
+			"major_dia": 0.7500,
+			"tpi": [{
+				"number": 10,
+				"minor_dia": 0.6273,
+				"75_tap_drill": "21/32\"",
+				"75_tap_decimal": 0.6562,
+				"50_tap_drill": "11/16\"",
+				"50_tap_decimal": 0.6875
+			},{
+				"number": 16,
+				"minor_dia": 0.6733,
+				"75_tap_drill": "11/16\"",
+				"75_tap_decimal": 0.6875,
+				"50_tap_drill": "45/64\"",
+				"50_tap_decimal": 0.7031
+				},{
+				"number": 20,
+				"minor_dia": 0.6887,
+				"75_tap_drill": "45/64\"",
+				"75_tap_decimal": 0.7031,
+				"50_tap_drill": "23/32\"",
+				"50_tap_decimal": 0.7188
+				}],
+			"close_drill": "49/64\"",
+			"close_decimal": 0.7656,
+			"free_drill": "25/32\"",
+			"free_decimal": 0.7812,
+			"head_size": "1-1/8\""
+		},
+		{
+			"size": "13/16\"",
+			"major_dia": 0.8125,
+			"tpi": [{
+				"number": 20,
+				"minor_dia": 0.7512,
+				"75_tap_drill": "49/64\"",
+				"75_tap_decimal": 0.7656,
+				"50_tap_drill": "25/32\"",
+				"50_tap_decimal": 0.7812
+			}],
+			"close_drill": "53/64\"",
+			"close_decimal": 0.8281,
+			"free_drill": "27/32\"",
+			"free_decimal": 0.8438,
+			"head_size": ""
+		},
+		{
+			"size": "7/8\"",
+			"major_dia": 0.8750,
+			"tpi": [{
+				"number": 9,
+				"minor_dia": 0.7387,
+				"75_tap_drill": "49/64\"",
+				"75_tap_decimal": 0.7656,
+				"50_tap_drill": "51/64\"",
+				"50_tap_decimal": 0.7969
+			},{
+				"number": 14,
+				"minor_dia": 7874,
+				"75_tap_drill": "13/16\"",
+				"75_tap_decimal": 0.8125,
+				"50_tap_drill": "53/64\"",
+				"50_tap_decimal": 0.8281
+				},{
+				"number": 20,
+				"minor_dia": 0.8137,
+				"75_tap_drill": "53/64\"",
+				"75_tap_decimal": 0.8281,
+				"50_tap_drill": "27/32\"",
+				"50_tap_decimal": 0.8438
+				}],
+			"close_drill": "57/64\"",
+			"close_decimal": 0.8906,
+			"free_drill": "29/32\"",
+			"free_decimal": 0.9062,
+			"head_size": "1-5/16\""
+		},
+		{
+			"size": "15/16\"",
+			"major_dia": 0.9375,
+			"tpi": [{
+				"number": 20,
+				"minor_dia": 0.8762,
+				"75_tap_drill": "57/64\"",
+				"75_tap_decimal": 0.8906,
+				"50_tap_drill": "29/32\"",
+				"50_tap_decimal": 0.9062
+			}],
+			"close_drill": "61/64\"",
+			"close_decimal": 0.9531,
+			"free_drill": "31/32\"",
+			"free_decimal": 0.9688,
+			"head_size": ""
+		},
+		{
+			"size": "1\"",
+			"major_dia": 1.000,
+			"tpi": [{
+				"number": 8,
+				"minor_dia": 0.8466,
+				"75_tap_drill": "7/8\"",
+				"75_tap_decimal": 0.8750,
+				"50_tap_drill": "59/64\"",
+				"50_tap_decimal": 0.9219
+			},{
+				"number": 12,
+				"minor_dia": 0.8978,
+				"75_tap_drill": "15/16\"",
+				"75_tap_decimal": 0.9375,
+				"50_tap_drill": "61/64\"",
+				"50_tap_decimal": 0.9531
+				},{
+				"number": 20,
+				"minor_dia": 0.9387,
+				"75_tap_drill": "61/64\"",
+				"75_tap_decimal": 0.9531,
+				"50_tap_drill": "31/32\"",
+				"50_tap_decimal": 0.9688
+				}],
+			"close_drill": "1-1/64\"",
+			"close_decimal": 1.0156,
+			"free_drill": "1-1/32\"",
+			"free_decimal": 1.0313,
+			"head_size": "1-1/2\""
+		}
+	]
+
+}

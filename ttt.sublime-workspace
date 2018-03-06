@@ -1,0 +1,1297 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tmp",
+				"tmpjpg"
+			],
+			[
+				"trait",
+				"traits_e-x1"
+			],
+			[
+				"trai",
+				"traits"
+			],
+			[
+				"alt",
+				"altURL"
+			],
+			[
+				"is",
+				"isset"
+			],
+			[
+				"va",
+				"var_dump"
+			],
+			[
+				"ob_en",
+				"ob_end_flush"
+			],
+			[
+				"strto",
+				"strtolower"
+			],
+			[
+				"sou",
+				"source_file_location"
+			],
+			[
+				"contain",
+				"containerClass"
+			],
+			[
+				"script",
+				"scriptInject"
+			],
+			[
+				"lang",
+				"language"
+			],
+			[
+				"req",
+				"require_once"
+			],
+			[
+				"s",
+				"style\tAttr"
+			],
+			[
+				"inlin",
+				"inline_scripts"
+			],
+			[
+				"qGet",
+				"qGetQuantities"
+			],
+			[
+				"text-",
+				"text-left"
+			],
+			[
+				"text",
+				"text-right"
+			],
+			[
+				"com",
+				"companyName"
+			],
+			[
+				"footer",
+				"footerJS"
+			],
+			[
+				"ti",
+				"title\tTag"
+			],
+			[
+				"te",
+				"text"
+			],
+			[
+				"pa",
+				"parent_name"
+			],
+			[
+				"node",
+				"nodeCaption"
+			],
+			[
+				"secio",
+				"sectionIDlist"
+			],
+			[
+				"out",
+				"output=\"true\"\toutput"
+			],
+			[
+				"section",
+				"sectionIDlist"
+			],
+			[
+				"sectio",
+				"sectionIDlist"
+			],
+			[
+				"sec",
+				"sectionIDlist"
+			],
+			[
+				"get",
+				"getMenuItems"
+			],
+			[
+				"type",
+				"type=\"any\"\ttype"
+			],
+			[
+				"b",
+				"builder_name"
+			],
+			[
+				"arra",
+				"arrayAppend\tfn. (cfscript)"
+			],
+			[
+				"cfd",
+				"cfdump\tTag (cmfl)"
+			],
+			[
+				"cfo",
+				"cfoutput\tTag (cmfl)"
+			],
+			[
+				"reques",
+				"requestID"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"so",
+				"solid"
+			],
+			[
+				"ea",
+				"eae_admin"
+			],
+			[
+				"struc",
+				"structDelete\tfn. (cfscript)"
+			],
+			[
+				"hi",
+				"hills"
+			],
+			[
+				"sub",
+				"subtropical"
+			],
+			[
+				"div",
+				"div_id"
+			],
+			[
+				"page",
+				"PageTitle"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.htm",
+			"settings":
+			{
+				"buffer_size": 53703,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/src/main.js",
+			"settings":
+			{
+				"buffer_size": 2453,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/src/plugins.js",
+			"settings":
+			{
+				"buffer_size": 760,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/src/bolt.js",
+			"settings":
+			{
+				"buffer_size": 17011,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 1260,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/src/_h5bp.scss",
+			"settings":
+			{
+				"buffer_size": 4706,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/src/main.scss",
+			"settings":
+			{
+				"buffer_size": 1051,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/src/_normalize.scss",
+			"settings":
+			{
+				"buffer_size": 7719,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 236.0,
+		"last_filter": "wrap",
+		"selected_items":
+		[
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"con",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"lo",
+				"Convert Case: Lower Case"
+			],
+			[
+				"conver",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"conv",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"low",
+				"Convert Case: Lower Case"
+			],
+			[
+				"pack",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"sor",
+				"Sort Lines"
+			],
+			[
+				"spac",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"en",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"dis",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"lint",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"linter",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"sublim",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"sublimelinter",
+				"Preferences: SublimeLinter Settings – Default"
+			],
+			[
+				"spa",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"dup",
+				"Duplicate Selections"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"print",
+				"Print to HTML: print as HTML via browser"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"wr",
+				"Word Wrap: Toggle"
+			],
+			[
+				"com",
+				"Toggle Block Comment"
+			],
+			[
+				"comm",
+				"Toggle Comment"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"togg",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"toggl",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"show",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"sho",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"toggle",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 524.0
+	},
+	"console":
+	{
+		"height": 667.0,
+		"history":
+		[
+			"sublime.log_indexing(True)",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Z/var/www/eakett.ca/tappy_tap_tap",
+		"/Z/var/www/eakett.ca/tappy_tap_tap/css",
+		"/Z/var/www/eakett.ca/tappy_tap_tap/css/src",
+		"/Z/var/www/eakett.ca/tappy_tap_tap/doc",
+		"/Z/var/www/eakett.ca/tappy_tap_tap/img"
+	],
+	"file_history":
+	[
+		"/V/andy/topic/public_html/traits_fonctionnels.php",
+		"/V/andy/topic/public_html/functional_traits.php",
+		"/V/andy/topic/public_html/review_de_la_litterature.php",
+		"/V/andy/topic/public_html/literature_review.php",
+		"/V/andy/topic/public_html/source_de_donnees_externes.php",
+		"/V/andy/topic/public_html/external_sources_of_data.php",
+		"/V/andy/topic/public_html/coordonnees.php",
+		"/V/andy/topic/public_html/contact.php",
+		"/V/andy/topic/public_html/conf.php",
+		"/V/andy/topic/public_html/application.php",
+		"/C/bin/tinyjpg.bat",
+		"/V/andy/topic/public_html/set_lang.php",
+		"/V/andy/topic/ktopic/includes/text_f.txt",
+		"/C/bin/tinypng.bat",
+		"/C/bin/rm.bat",
+		"/C/bin/less.bat",
+		"/C/bin/cat.bat",
+		"/C/bin/ls.bat",
+		"/C/bin/cp.bat",
+		"/V/andy/topic/topic.sublime-project",
+		"/V/andy/topic/public_html/index-old.php",
+		"/V/global_include/templates/wet4/footer_f.php",
+		"/V/global_include/templates/wet4/footer_e.php",
+		"/V/global_include/templates/wet4/header_f.php",
+		"/V/global_include/templates/wet4/header_e.php",
+		"/V/global_include/templates/wet4/footer.php",
+		"/V/global_include/templates/wet4/header.php",
+		"/V/andy/topic/public_html/index.php",
+		"/C/Users/aeakett/AppData/Roaming/Sublime Text 3/Packages/User/php-cfp.sublime-snippet",
+		"/C/Users/aeakett/AppData/Roaming/Sublime Text 3/Packages/User/.sublime-completions",
+		"/C/Users/aeakett/AppData/Roaming/Sublime Text 3/Packages/User/php-cfp.snippet",
+		"/V/customtags/wet4_internet_footer.cfm",
+		"/V/customtags/wet4_internet_banner.cfm",
+		"/V/andy/topic/ktopic/public_html/index.php",
+		"/V/jtassone/nopd_project/nopd/resources/content/content.php",
+		"/V/jtassone/nopd_project/nopd/public_html/framework_parts/theme-base/assets/favicon-mobile.png",
+		"/V/jtassone/nopd_project/nopd/public_html/framework_parts/theme-base/assets/logo.png",
+		"/V/andy/nopd_project/nopd/public_html/index.php",
+		"/V/andy/nopd_project/nopd/public_html/favicons/browserconfig.xml",
+		"/V/andy/nopd_project/nopd/public_html/favicons/manifest.json",
+		"/V/andy/nopd_project/nopd/public_html/favicons2/browserconfig.xml",
+		"/V/andy/nopd_project/nopd/public_html/favicons3/safari-pinned-tab.svg",
+		"/V/andy/nopd_project/nopd/public_html/favicons3/browserconfig.xml",
+		"/V/andy/nopd_project/nopd/public_html/favicons3/manifest.json",
+		"/V/andy/nopd/public_html/index.php",
+		"/C/Users/aeakett/Desktop/openbd-local/webapp/vUnitsImport/cfc/Association.cfc",
+		"/C/Users/aeakett/Desktop/openbd-local/webapp/vUnitsImport/doImport.cfm",
+		"/C/Users/aeakett/Desktop/openbd-local/webapp/vUnitsImport/asdf.cfm",
+		"/C/Users/aeakett/Desktop/openbd-local/webapp/vUnitsImport/cfc/AssociationPublisher.cfc",
+		"/C/Users/aeakett/Desktop/openbd-local/webapp/vUnitsImport/import.cfm",
+		"/C/Users/aeakett/Desktop/openbd-local/webapp/vUnitsImport/cfc/MDBAssociation.cfc",
+		"/V/andy/cnvc/public_html/admin/cfc/OracleAssociation.cfc",
+		"/V/andy/iprod/public_html/cart-panier/conf.cfm",
+		"/V/andy/iprod/public_html/cart-panier/index.cfm",
+		"/C/Users/aeakett/Desktop/openbd-local/webapp/vUnitsImport/cfc/VUnitExport.cfc",
+		"/C/Users/aeakett/Desktop/openbd-local/webapp/vUnitsImport/cfc/AssociationReciever.cfc",
+		"/C/Users/aeakett/Desktop/openbd-local/webapp/vUnitsImport/cfc/OracleAssociation.cfc",
+		"/S/andy/asdf/vUnitsImport Container 2/webapp/vUnitsImport/asdf.cfm",
+		"/S/andy/asdf/vUnitsImport Container 2/webapp/vUnitsImport/import.cfm",
+		"/S/andy/asdf/vUnitsImport Container 2/webapp/vUnitsImport/cfc/VUnitExport.cfc",
+		"/C/Users/aeakett/Desktop/openbd-local/tainted/webapp/vUnitsImport/import.cfm",
+		"/S/andy/asdf/vUnitsImport Container 2/webapp/vUnitsImport/conf.cfm",
+		"/C/Users/aeakett/Desktop/openbd-local/webapp/vUnitsImport/conf.cfm",
+		"/V/andy/iprod/public_html/cart-panier/inline_scripts/b.cfm",
+		"/V/andy/iprod/public_html/cart-panier/order-commander.cfm",
+		"/V/andy/iprod/public_html/cart-panier/inline_scripts/c.cfm",
+		"/V/andy/iprod/public_html/cart-panier/inline_scripts/a.cfm",
+		"/V/andy/iprod/tests/cart/cart_suite.htm",
+		"/V/andy/iprod/tests/cart/check_for_different_container_sizes.html",
+		"/V/andy/iprod/tests/cart/ext_weekly_shipping_material.html",
+		"/V/andy/iprod/tests/cart/cfs_three_orders_shipping_material.html",
+		"/C/Temp/tmpDEBA.tmp.cfm",
+		"/V/andy/iprod/tests/cart/weekly_insect_order.htm",
+		"/V/andy/iprod/tests/cart/biweekly_insect_order.htm",
+		"/V/andy/iprod/tests/cart/cfs_biweekly_shipping_material.html",
+		"/V/andy/iprod/tests/cart/cfs_monthly_shipping_material.html",
+		"/V/andy/iprod/tests/cart/cfs_weekly_shipping_material.html",
+		"/V/andy/iprod/tests/cart/ext_biweekly_shipping_material.html",
+		"/V/andy/iprod/tests/cart/ext_monthly_shipping_material.html",
+		"/V/andy/iprod/tests/cart/ext_three_orders_shipping_material.html",
+		"/V/andy/iprod/tests/cart/minimum_order.htm",
+		"/V/andy/iprod/tests/cart/minimum_order_external.htm",
+		"/V/andy/iprod/tests/cart/monthly_insect_order.htm",
+		"/V/andy/iprod/tests/cart/order_3_insects.htm",
+		"/V/andy/iprod/tests/cart/remove_taxes.htm",
+		"/V/andy/iprod/tests/cart/standard_diet_buy.htm",
+		"/V/andy/iprod/tests/cart/standard_insect_buy.htm",
+		"/V/andy/iprod/public_html/cart-panier/Application.cfm",
+		"/C/Users/aeakett/Desktop/1q1q1q1q/asdf/data_0",
+		"/V/andy/iprod/public_html/cart-panier/set_lang.cfm",
+		"/V/andy/iprod/public_html/cart-panier/customtags/display/header.cfm",
+		"/V/andy/iprod/public_html/shared/header.cfm",
+		"/V/andy/iprod/public_html/cart-panier/customtags/display/footer.cfm",
+		"/V/andy/iprod/public_html/shared/footer.cfm",
+		"/V/andy/iprod/public_html/cart-panier/css/source/local.scss",
+		"/V/andy/iprod/public_html/cart-panier/bill-facturation.cfm",
+		"/V/andy/iprod/public_html/cart-panier/summary-resume.cfm",
+		"/V/andy/iprod/public_html/cart-panier/chkout_final.cfm",
+		"/V/andy/iprod/public_html/cart-panier/agreement-convention.cfm",
+		"/V/andy/iprod/public_html/cart-panier/pn-nslpdrp.cfm",
+		"/V/andy/iprod/public_html/cart-panier/cups-contenants.cfm",
+		"/V/andy/iprod/public_html/cart-panier/diets-dietes.cfm",
+		"/V/andy/iprod/public_html/cart-panier/po.cfm",
+		"/V/andy/iprod/public_html/shared/menu.cfm",
+		"/V/andy/iprod/public_html/cart-panier/insects-insectes.cfm",
+		"/V/andy/iprod/public_html/cart-panier/css/source/.sass-lint.yml",
+		"/V/andy/iprod/public_html/cart-panier/dry_ingredients.cfm",
+		"/V/andy/iprod/public_html/cart-panier/cart-panier.cfm",
+		"/V/andy/iprod/public_html/cart-panier/edit-modifier.cfm",
+		"/C/Users/aeakett/AppData/Roaming/Sublime Text 3/Installed Packages/SublimeLinter-contrib-sass-lint.sublime-package",
+		"/C/Users/aeakett/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/V/andy/iprod/public_html/cart-panier/css/local.css",
+		"/V/andy/iprod/public_html/cart-panier/css/local.css.map",
+		"/V/andy/iprod/public_html/cart-panier/local.css",
+		"/V/andy/phptest/test.php",
+		"/V/andy/phptest/handler.php",
+		"/C/Users/aeakett/Desktop/openbd-local/webapp/vUnitsImport/templates/header.cfm",
+		"/V/andy/iprod/public_html/prod/conf.cfm",
+		"/V/andy/iprod/public_html/prod/results-resultats.cfm",
+		"/V/andy/iprod/public_html/prod/js/adddrops.js",
+		"/U/andy/iprod/public_html/cart-panier/order-commander.cfm",
+		"/V/andy/iprod/sql/functions.sql",
+		"/C/Users/aeakett/Downloads/selenium/TestSeleniumSuite.html",
+		"/C/Users/aeakett/sass_example/example.css",
+		"/C/Users/aeakett/sass_example/example.min.css",
+		"/C/Users/aeakett/sass_example/example.css.map",
+		"/V/andy/iprod/public_html/shared/css/iprod.css",
+		"/C/Users/aeakett/sass_example/example.scss"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			"V:\\andy\\topic\\ktopic",
+			"V:\\andy\\cnvc\\vUnitsImport",
+			"V:\\andy\\iprod\\public_html\\cart-panier",
+			"V:\\andy\\cnvc\\public_html",
+			"V:\\andy\\cnvc",
+			"V:\\andy\\iprod\\public_html\\cart-panier",
+			"V:\\andy\\iprod\\public_html",
+			"V:\\andy\\iprod\\public_html\\prod",
+			"V:\\andy\\iprod\\public_html\\cart-panier",
+			"V:\\andy\\pestgen",
+			"V:\\andy\\iprod\\public_html\\cart-panier",
+			"V:\\andy\\cnvc\\public_html",
+			"V:\\andy\\cnvc\\vUnitsImport",
+			"V:\\andy\\cnvc\\public_html",
+			"V:\\\\andy\\cnvc\\public_html",
+			"V:\\\\andy\\cnvc-prod\\vUnitsImport",
+			"V:\\\\andy\\cnvc-prod",
+			"V:\\\\andy\\cnvc-prod\\vUnitsImport",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\CMB\\cfaqs\\Dev",
+			"Z:\\wwwint2.NRCan.gc.ca\\CSS\\IMB\\rpims",
+			"V:\\product-search",
+			"V:\\product-search\\_model",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\CMB\\cfaqs\\Dev",
+			"Z:\\wwwint2.NRCan.gc.ca\\PAPMS-SGAPP\\Plan",
+			"Z:\\wwwint2.NRCan.gc.ca\\PAPMS-SGAPP",
+			"Z:\\wwwint2.NRCan.gc.ca\\PAPMS-SGAPP\\Plan",
+			"\\\\s0-bsc-uwdev1\\www\\fileexchange.dev.nrcan.gc.ca\\system\\application",
+			"\\\\s0-bsc-uwdev1\\www\\fileexchange.dev.nrcan.gc.ca",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\ERD\\ERDWeb",
+			"\\\\s0-bsc-webprd1\\wwwroot\\tcp-pvc.nrcan-rncan.gc.ca",
+			"\\\\s0-bsc-webdev1\\wwwroot\\cfusion27.nrcan.gc.ca\\auth\\tcp",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\subscription_admin",
+			"\\\\s0-ott-web4a\\wwwroot\\www2.NRCan.gc.ca\\contact-contactez-dev",
+			"Z:\\wwwint2.NRCan.gc.ca\\mcu-ucm",
+			"Z:\\OEEForms.NRCan.gc.ca",
+			"Z:\\OEEForms.NRCan.gc.ca\\controller",
+			"Z:\\OEEForms.NRCan.gc.ca",
+			"Z:\\wwwint2.NRCan.gc.ca\\PAPMS-SGAPP\\Plan",
+			"Z:\\wwwint2.NRCan.gc.ca\\PAPMS-SGAPP",
+			"\\\\s0-ott-web4a\\wwwroot\\www2.NRCan.gc.ca\\contact-contactez-dev",
+			"\\\\s0-bsc-uwdev1\\www\\fileexchange.dev.nrcan.gc.ca\\system",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\OEE\\new_housing\\admin",
+			"Z:\\wwwint2.NRCan.gc.ca\\PAPMS-SGAPP\\Plan",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\OEE\\r2000\\dev\\sections\\homes",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\CMB\\cfaqs\\Dev",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\OEE\\r2000\\dev",
+			"\\\\s0-bsc-web8\\wwwroot\\OEE\\OEE-Site\\pml-lmp",
+			"V:\\product-search",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\OEE\\r2000\\dev",
+			"Z:\\wwwint2.NRCan.gc.ca\\tools-outils\\media\\mcr-ram",
+			"\\\\s0-bsc-webdev1\\wwwroot\\epar-dimp.nrcan-rncan.gc.ca",
+			"\\\\s0-bsc-webdev1\\wwwroot\\connexus.nrcan-rncan.gc.ca",
+			"\\\\s0-bsc-webdev1\\wwwroot\\cfusion27.nrcan.gc.ca\\auth\\tcp",
+			"V:\\product-search",
+			"\\\\s0-bsc-webdev1\\wwwroot\\procurement-approvisionnement.nrcan-rncan.gc.ca",
+			"\\\\s0-ott-web4a\\wwwroot\\www2.NRCan.gc.ca\\SSO\\OEE\\new_housing",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\OEE\\new_housing\\admin",
+			"\\\\s0-bsc-webdev1\\wwwroot\\epay-pel.nrcan-rncan.gc.ca\\_lib",
+			"\\\\s0-bsc-webdev1\\wwwroot\\epay-pel.nrcan-rncan.gc.ca",
+			"Z:\\wwwint2.NRCan.gc.ca\\tools-outils",
+			"V:\\residential\\exam\\admin",
+			"\\\\s0-ott-web4a\\wwwroot\\www2.NRCan.gc.ca\\SSO\\OEE\\new_housing\\public-search",
+			"Z:\\CustomTags\\OEE\\cfc\\housing",
+			"V:\\residential\\exam",
+			"Z:\\CustomTags\\OEE\\cfc\\housing",
+			"V:\\residential\\exam",
+			"V:\\residential",
+			"\\\\s0-ott-web4a\\wwwroot\\www2.NRCan.gc.ca\\contact-contactez-dev",
+			"\\\\s0-bsc-webdev1\\wwwroot\\procurement-approvisionnement.nrcan-rncan.gc.ca",
+			"\\\\s0-bsc-webdev1\\wwwroot\\etaxi-tel.nrcan-rncan.gc.ca\\assets\\js",
+			"\\\\s0-bsc-webdev1\\wwwroot\\etaxi-tel.nrcan-rncan.gc.ca",
+			"Z:\\www2.NRCan.gc.ca\\eneene\\sources\\rcd-bce",
+			"\\\\s0-bsc-web8\\wwwroot\\OEE\\OEE-Site\\pml-lmp",
+			"V:\\product-search",
+			"Z:\\wwwint2.NRCan.gc.ca\\tools-outils\\media\\mcr-ram\\callreport",
+			"Z:\\CustomTags\\OEE\\cfc\\housing",
+			"V:\\residential\\exam",
+			"V:\\residential\\exam\\admin",
+			"V:\\residential\\exam",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\OEE\\new_housing\\admin",
+			"Z:\\CustomTags\\OEE\\cfc\\housing",
+			"\\\\s0-bsc-webdev1\\wwwroot\\cfusion27.nrcan.gc.ca\\auth",
+			"\\\\s0-bsc-webdev1\\wwwroot\\cfusion27.nrcan.gc.ca\\auth\\tcp",
+			"Z:\\wwwint2.NRCan.gc.ca\\SSO\\OEE\\new_housing\\admin",
+			"C:\\Users\\aeakett\\Desktop\\vUnitsImport Container\\webapps\\openbd\\vUnitsImport"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\\?(php)",
+			"(menu) ",
+			"Les membres du R",
+			"facilite et fait la promotion de",
+			"action",
+			"lr",
+			"ft",
+			"Munson, Alison (Univer",
+			"The TOPIC network stimulates, facilitates and promotes",
+			"department",
+			"data-ajax",
+			"h1",
+			"wet-boew.min",
+			"wet-boew.min.js",
+			"##",
+			"\\.js",
+			">\n",
+			"sup",
+			"\\}",
+			"request.aaaaa",
+			"\\\\</p\\\\>",
+			"\\\\<p\\\\>",
+			"\\u201d",
+			"\\u201c",
+			"\\u2019",
+			"\\\\/",
+			"\\u003E",
+			"\\u003C",
+			"11",
+			"frac34",
+			"05",
+			"rName",
+			"\"  \"",
+			"  ",
+			"   ",
+			"Unknown Sub-Region",
+			"this\\.regions",
+			"\\.regions",
+			"regions",
+			"curl http:.*..jpg >",
+			"curl https://.*\\.jpg >",
+			"%20",
+			" $",
+			"404 \\(.*",
+			"\\(anonymous\\) @ \\(index\\):47",
+			"append @ jquery.min.js:3",
+			"ua @ jquery.min.js:3",
+			"\\(anonymous\\) @ jquery.min.js:3",
+			"Image \\(async\\)",
+			"Image (async)",
+			".*:1 GET http://eakett.ca/mtgimage/set",
+			"<script",
+			"id=\"i",
+			"cups34",
+			"frac34",
+			".*/(.*)\\.tgz",
+			"style",
+			"swarmsim",
+			"<cfoutput",
+			"PageTitle",
+			"rowcol",
+			"border",
+			"\".*",
+			"[0-9][0-9]*  *\"",
+			"482   \"",
+			"[0-9][0-9]* *\"",
+			"associationPDFs",
+			"catalogueRendererURL",
+			"showhide",
+			"\\.bmp\\.jpg\"$",
+			"asdf/(.*)",
+			"(.*)",
+			"\\$[^m]",
+			"  *6p",
+			"  shallow  ",
+			"  *shallow  *",
+			"  *n",
+			".*y$",
+			"cfmail",
+			"wget",
+			"ibds",
+			"DBMSDataSource",
+			"cfquery",
+			"policyExceptedCompanies",
+			"pol",
+			"exempt",
+			"exclude",
+			"snap",
+			"wrench",
+			"request.site_root",
+			"·",
+			"\\)'\\|",
+			"jq 'del\\(",
+			"\\)'>qwer",
+			"cat asdf.json\\|jq 'del\\(",
+			"cat asdf.json|jq 'del(",
+			"$",
+			"^",
+			"index2.htm:36 ",
+			"  ",
+			"The content of elements must",
+			"Unknown",
+			"cfloop",
+			"space",
+			"     ",
+			"search",
+			"tree",
+			"<!--",
+			"association",
+			"<",
+			"dia:string",
+			"##",
+			">",
+			"<",
+			"specialCasedRegion",
+			"qGetRegions",
+			"Failed to load Association",
+			"passwd",
+			"$",
+			"^",
+			"^\\.",
+			"^",
+			"Association",
+			"OracleAssociation",
+			"Association.cfc",
+			"AssociationReciever.cfc",
+			"Association.dtd",
+			"$"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"?\\1 asdf",
+			"}\\n",
+			"",
+			"”",
+			"“",
+			"’",
+			"/",
+			">",
+			"<",
+			"\"                                                            \"",
+			"                                                            ",
+			" image_optim",
+			" ",
+			"",
+			"tar cvfz safe/\\1.tgz \\1",
+			"",
+			"\"",
+			"cp \"asdf/asdf/\\1\" \"\\1\"",
+			"cp \"\\1\" \"asdf/\\1.bmp\"",
+			"\\1 asdf/\\1.bmp",
+			"",
+			" ",
+			"",
+			"curl",
+			"",
+			", ",
+			".",
+			"",
+			"\\n",
+			"   ",
+			"\\n<",
+			"&gt;",
+			"&lt;",
+			"\" /home/aeakett/cnvc/public_html/",
+			"cp \"",
+			"/web/apps/cnvc/public_html/uploads",
+			"/web/apps/cnvc/public_html/images/glossary",
+			"; ",
+			"git cvsimport -C \\1 \\1",
+			"",
+			"2852,2853,2841,2865,2867,2866,2864,2863",
+			"card-flip-icon.png",
+			"",
+			"NRCan.cpsp_administrator-administrateur_du_pcsp.RNCan@canada.ca",
+			"",
+			"&eacute;",
+			"&egrave;",
+			"&ecirc;",
+			"&rsquo;",
+			"&agrave;",
+			"&rsquo;",
+			"&eacute;co&eacute;nerg&eacute;tiques",
+			"@",
+			"estma",
+			"\\\\",
+			"\\\\\\\\s0-ott-web4a\\\\wwwroot\\\\OEE\\\\OEE-Site\\\\",
+			"\\\\s0-ott-web4a\\wwwroot\\OEE\\OEE-Site\\",
+			"&amp;egrave;",
+			"&amp;ocirc;",
+			"&amp;agrave;",
+			"&amp;eacute;",
+			"\\1&nbsp;\\2",
+			"\\1,\\2",
+			"\\1 \\2",
+			"0,0",
+			"kWh/100",
+			"é",
+			"#233",
+			"&",
+			"",
+			"~~~~\\1",
+			"\\1=\"&\\1&\"&",
+			"<br>",
+			"<br><br>",
+			"<br>",
+			"\\1=\"&\\1&\"",
+			"type=\"text\"",
+			"",
+			"'",
+			"    ','yy-mm-dd') or",
+			"    AND price_date=to_date('",
+			"-",
+			" 09",
+			" 08",
+			" 07",
+			" 06",
+			" 05",
+			" 04",
+			" 03",
+			" 02",
+			" 01",
+			"  09",
+			"  08",
+			"  07",
+			"  06",
+			"  05",
+			"  04",
+			"  03",
+			"  02",
+			"  01",
+			"eae_admin",
+			"",
+			" ",
+			"<img src=\"img/amazon-32x32.png\" height=\"16\" width=\"16\" />",
+			"pandius",
+			"",
+			"wget http://panduis.com/",
+			"update division set parent=\\2 where div_id=\\1;",
+			"cvs add",
+			"&ecirc;",
+			"&ccedil;",
+			"&agrave;",
+			"&eacute;",
+			"&egrave;",
+			"&rsquo;",
+			"\\n<",
+			"\\n<link"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.htm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 53703,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1567,
+								1567
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 6,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 81.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/src/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2453,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1564,
+								1564
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 336.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/src/plugins.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 760,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/src/bolt.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 507.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Gruntfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1260,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1260,
+								1260
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "css/src/_h5bp.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4706,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								79,
+								79
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Solarized (Dark) (SL).tmTheme",
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "css/src/main.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1051,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Solarized (Dark) (SL).tmTheme",
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "css/src/_normalize.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7719,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Solarized (Dark) (SL).tmTheme",
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Makefile/Make.sublime-build",
+	"project": "ttt.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"V\\residential\\personal\\new-home-improvement\\upload.cfm"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"V:\\andy\\topic\\topic.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 300.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

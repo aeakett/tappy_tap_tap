@@ -1,0 +1,77 @@
+@import 'normalize';
+@import 'h5bp';
+@import 'solarized';
+
+// sass-lint:disable indentation
+
+body {
+   background-color: $base03;
+   color: $base0;
+   font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.contentPanel {
+
+   select {
+
+   }
+}
+
+#boltData {
+   color: $yellow;
+
+   span {
+      color: $base0;
+   }
+
+   #selector {
+      width: 100%;
+
+      select {
+         width: 50%;
+      }
+   }
+}
+
+
+#mainSelector {
+   background: $base02;
+   bottom: 0;
+   color: $green;
+   height: 3em;
+   left: 0;
+   position: fixed;
+   width: 100%;
+
+   .panelSelector {
+      background: $base02;
+      color: $green;
+      text-align: center;
+      width: 33%;
+
+      img {
+         height: 2em;
+      }
+   }
+}
+
+
+#drillChart {
+   tr {
+      &:nth-child(even) {background: $base03;}
+      &:nth-child(odd) {background: $base02;}
+   }
+}
+
+#fractionChart {
+   tr {
+      &:nth-child(even) {background: $base03;}
+      &:nth-child(odd) {background: $base02;}
+   }
+}
+
+
+
+
+
+
