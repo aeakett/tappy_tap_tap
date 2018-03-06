@@ -13,7 +13,10 @@ var bolt=[{
       "close_decimal": 0.0635,
       "free_drill": "50",
       "free_decimal": 0.0700,
-      "head_size": ""
+      "cap_head_size": ".050&Prime;",
+      "button_head_size": ".035&Prime;",
+      "flat_head_size": ".035&Prime;",
+      "hex_head_size": ""
    },
    {
       "size": "#1",
@@ -37,7 +40,10 @@ var bolt=[{
       "close_decimal": 0.0760,
       "free_drill": "46",
       "free_decimal": 0.0810,
-      "head_size": ""
+      "cap_head_size": "1&frasl;16&Prime;",
+      "button_head_size": ".050&Prime;",
+      "flat_head_size": ".050&Prime;",
+      "hex_head_size": ""
    },
    {
       "size": "#2",
@@ -61,7 +67,10 @@ var bolt=[{
       "close_decimal": 0.0890,
       "free_drill": "41",
       "free_decimal": 0.0960,
-      "head_size": ""
+      "cap_head_size": "5&frasl;64&Prime;",
+      "button_head_size": ".050&Prime;",
+      "flat_head_size": ".050&Prime;",
+      "hex_head_size": ""
    },
    {
       "size": "#3",
@@ -85,7 +94,10 @@ var bolt=[{
       "close_decimal": 0.1040,
       "free_drill": "35",
       "free_decimal": 0.1100,
-      "head_size": ""
+      "cap_head_size": "5&frasl;64&Prime;",
+      "button_head_size": "1&frasl;16&Prime;",
+      "flat_head_size": "1&frasl;16&Prime;",
+      "hex_head_size": ""
    },
    {
       "size": "#4",
@@ -109,7 +121,10 @@ var bolt=[{
       "close_decimal": 0.1160,
       "free_drill": "30",
       "free_decimal": 0.1285,
-      "head_size": ""
+      "cap_head_size": "3&frasl;32&Prime;",
+      "button_head_size": "1&frasl;16&Prime;",
+      "flat_head_size": "1&frasl;16&Prime;",
+      "hex_head_size": ""
    },
    {
       "size": "#5",
@@ -133,7 +148,10 @@ var bolt=[{
       "close_decimal": 0.1285,
       "free_drill": "29",
       "free_decimal": 0.1360,
-      "head_size": ""
+      "cap_head_size": "3&frasl;32&Prime;",
+      "button_head_size": "5&frasl;64&Prime;",
+      "flat_head_size": "5&frasl;64&Prime;",
+      "hex_head_size": ""
    },
    {
       "size": "#6",
@@ -157,7 +175,10 @@ var bolt=[{
       "close_decimal": 0.1440,
       "free_drill": "25",
       "free_decimal": 0.1495,
-      "head_size": "1&frasl;4&Prime;"
+      "cap_head_size": "7&frasl;64&Prime;",
+      "button_head_size": "5&frasl;64&Prime;",
+      "flat_head_size": "5&frasl;64&Prime;",
+      "hex_head_size": "1&frasl;4&Prime;"
    },
    {
       "size": "#8",
@@ -181,7 +202,10 @@ var bolt=[{
       "close_decimal": 0.1695,
       "free_drill": "16",
       "free_decimal": 0.1770,
-      "head_size": "1&frasl;4&Prime;"
+      "cap_head_size": "9&frasl;64&Prime;",
+      "button_head_size": "3&frasl;32&Prime;",
+      "flat_head_size": "3&frasl;32&Prime;",
+      "hex_head_size": "1&frasl;4&Prime;"
    },
    {
       "size": "#10",
@@ -205,7 +229,10 @@ var bolt=[{
       "close_decimal": 0.1960,
       "free_drill": "7",
       "free_decimal": 0.2010,
-      "head_size": "5&frasl;16&Prime;"
+      "cap_head_size": "5&frasl;32&Prime;",
+      "button_head_size": "1&frasl;8&Prime;",
+      "flat_head_size": "1&frasl;8&Prime;",
+      "hex_head_size": "5&frasl;16&Prime;"
    },
    {
       "size": "#12",
@@ -236,7 +263,10 @@ var bolt=[{
       "close_decimal": 0.2210,
       "free_drill": "1",
       "free_decimal": 0.2280,
-      "head_size": "5&frasl;16&Prime;"
+      "cap_head_size": "",
+      "button_head_size": "",
+      "flat_head_size": "",
+      "hex_head_size": "5&frasl;16&Prime;"
    },
    {
       "size": "1&frasl;4&Prime;",
@@ -267,7 +297,10 @@ var bolt=[{
       "close_decimal": 0.2570,
       "free_drill": "H",
       "free_decimal": 0.2660,
-      "head_size": "7&frasl;16&Prime; or 3&frasl;8&Prime;"
+      "cap_head_size": "3&frasl;16&Prime;",
+      "button_head_size": "5&frasl;32&Prime;",
+      "flat_head_size": "5&frasl;32&Prime;",
+      "hex_head_size": "7&frasl;16&Prime; or 3&frasl;8&Prime;"
    },
    {
       "size": "5&frasl;16&Prime;",
@@ -298,7 +331,10 @@ var bolt=[{
       "close_decimal": 0.3230,
       "free_drill": "Q",
       "free_decimal": 0.3320,
-      "head_size": "1&frasl;2&Prime;"
+      "cap_head_size": "1&frasl;4&Prime;",
+      "button_head_size": "3&frasl;16&Prime;",
+      "flat_head_size": "3&frasl;16&Prime;",
+      "hex_head_size": "1&frasl;2&Prime;"
    },
    {
       "size": "3&frasl;8&Prime;",
@@ -329,7 +365,10 @@ var bolt=[{
       "close_decimal": 0.3860,
       "free_drill": "X",
       "free_decimal": 0.3970,
-      "head_size": "9&frasl;16&Prime;"
+      "cap_head_size": "5&frasl;16&Prime;",
+      "button_head_size": "7&frasl;32&Prime;",
+      "flat_head_size": "7&frasl;326&Prime;",
+      "hex_head_size": "9&frasl;16&Prime;"
    },
    {
       "size": "7&frasl;16&Prime;",
@@ -360,7 +399,10 @@ var bolt=[{
       "close_decimal": 0.4531,
       "free_drill": "15&frasl;32&Prime;",
       "free_decimal": 0.4687,
-      "head_size": "5&frasl;8&Prime;"
+      "cap_head_size": "3&frasl;8&Prime;",
+      "button_head_size": "",
+      "flat_head_size": "1&frasl;4&Prime;",
+      "hex_head_size": "5&frasl;8&Prime;"
    },
    {
       "size": "1&frasl;2&Prime;",
@@ -391,7 +433,10 @@ var bolt=[{
       "close_decimal": 0.5156,
       "free_drill": "17&frasl;32&Prime;",
       "free_decimal": 0.5312,
-      "head_size": "3&frasl;4&Prime;"
+      "cap_head_size": "3&frasl;8&Prime;",
+      "button_head_size": "5&frasl;16&Prime;",
+      "flat_head_size": "5&frasl;16&Prime;",
+      "hex_head_size": "3&frasl;4&Prime;"
    },
    {
       "size": "9&frasl;16&Prime;",
@@ -422,7 +467,10 @@ var bolt=[{
       "close_decimal": 0.5781,
       "free_drill": "19&frasl;32&Prime;",
       "free_decimal": 0.5938,
-      "head_size": "13&frasl;16&Prime;"
+      "cap_head_size": "",
+      "button_head_size": "",
+      "flat_head_size": "",
+      "hex_head_size": "13&frasl;16&Prime;"
    },
    {
       "size": "5&frasl;8&Prime;",
@@ -453,7 +501,10 @@ var bolt=[{
       "close_decimal": 0.6406,
       "free_drill": "21&frasl;32&Prime;",
       "free_decimal": 0.6562,
-      "head_size": "15&frasl;16&Prime;"
+      "cap_head_size": "1&frasl;2&Prime;",
+      "button_head_size": "3&frasl;8&Prime;",
+      "flat_head_size": "3&frasl;8&Prime;",
+      "hex_head_size": "15&frasl;16&Prime;"
    },
    {
       "size": "11&frasl;16&Prime;",
@@ -470,7 +521,10 @@ var bolt=[{
       "close_decimal": 0.7031,
       "free_drill": "23&frasl;32&Prime;",
       "free_decimal": 0.6562,
-      "head_size": ""
+      "cap_head_size": "",
+      "button_head_size": "",
+      "flat_head_size": "",
+      "hex_head_size": ""
    },
    {
       "size": "3&frasl;4&Prime;",
@@ -501,7 +555,10 @@ var bolt=[{
       "close_decimal": 0.7656,
       "free_drill": "25&frasl;32&Prime;",
       "free_decimal": 0.7812,
-      "head_size": "1-1&frasl;8&Prime;"
+      "cap_head_size": "5&frasl;8&Prime;",
+      "button_head_size": "",
+      "flat_head_size": "1&frasl;2&Prime;",
+      "hex_head_size": "1-1&frasl;8&Prime;"
    },
    {
       "size": "13&frasl;16&Prime;",
@@ -518,7 +575,10 @@ var bolt=[{
       "close_decimal": 0.8281,
       "free_drill": "27&frasl;32&Prime;",
       "free_decimal": 0.8438,
-      "head_size": ""
+      "cap_head_size": "",
+      "button_head_size": "",
+      "flat_head_size": "",
+      "hex_head_size": ""
    },
    {
       "size": "7&frasl;8&Prime;",
@@ -549,7 +609,10 @@ var bolt=[{
       "close_decimal": 0.8906,
       "free_drill": "29&frasl;32&Prime;",
       "free_decimal": 0.9062,
-      "head_size": "1-5&frasl;16&Prime;"
+      "cap_head_size": "3&frasl;4&Prime;",
+      "button_head_size": "",
+      "flat_head_size": "9&frasl;16&Prime;",
+      "hex_head_size": "1-5&frasl;16&Prime;"
    },
    {
       "size": "15&frasl;16&Prime;",
@@ -566,7 +629,10 @@ var bolt=[{
       "close_decimal": 0.9531,
       "free_drill": "31&frasl;32&Prime;",
       "free_decimal": 0.9688,
-      "head_size": ""
+      "cap_head_size": "",
+      "button_head_size": "",
+      "flat_head_size": "",
+      "hex_head_size": ""
    },
    {
       "size": "1&Prime;",
@@ -597,6 +663,9 @@ var bolt=[{
       "close_decimal": 1.0156,
       "free_drill": "1-1&frasl;32&Prime;",
       "free_decimal": 1.0313,
-      "head_size": "1-1&frasl;2&Prime;"
+      "cap_head_size": "3&frasl;4&Prime;",
+      "button_head_size": "",
+      "flat_head_size": "5&frasl;8&Prime;",
+      "hex_head_size": "1-1&frasl;2&Prime;"
    }
    ];

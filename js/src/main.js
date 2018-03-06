@@ -38,7 +38,7 @@ function boltTPIChange() {
 }
 
 function displayBoltData (size, tpi) {
-   $('#majorDiameter, #minorDiameter, #tpi, #75TapDrill, #75TapDecimal, #50TapDrill, #50TapDecimal, #closeDrill, #closeDecimal, #freeDrill, #freeDecimal, #headSize').empty();
+   $('#majorDiameter, #minorDiameter, #tpi, #75TapDrill, #75TapDecimal, #50TapDrill, #50TapDecimal, #closeDrill, #closeDecimal, #freeDrill, #freeDecimal, #hexHeadSize, #capHeadSize, #buttonHeadSize, #flatHeadSize').empty();
    $('#majorDiameter').append(bolt[size].major_dia);
    $('#minorDiameter').append(bolt[size].tpi[tpi].minor_dia);
    //$('#tpi').append(bolt[size].tpi[tpi].number);
@@ -50,7 +50,10 @@ function displayBoltData (size, tpi) {
    $('#closeDecimal').append(bolt[size].close_decimal);
    $('#freeDrill').append(formatFraction(bolt[size].free_drill));
    $('#freeDecimal').append(bolt[size].free_decimal);
-   $('#headSize').append(formatFraction(bolt[size].head_size));
+   $('#hexHeadSize').append(formatFraction(bolt[size].hex_head_size));
+   $('#capHeadSize').append(formatFraction(bolt[size].cap_head_size));
+   $('#buttonHeadSize').append(formatFraction(bolt[size].button_head_size));
+   $('#flatHeadSize').append(formatFraction(bolt[size].flat_head_size));
 }
 
 function formatFraction(frac){
