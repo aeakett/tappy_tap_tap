@@ -1,76 +1,71 @@
-@import 'normalize';
 @import 'h5bp';
 @import 'solarized';
 
-// sass-lint:disable indentation
-
 body {
-   background-color: $base03;
-   color: $base0;
-   font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+  background-color: $dark-black;
+  color: $base0;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
-.contentPanel {
-
-   select {
-
-   }
+.content-panel {
+  text-align: center;
 }
 
-#boltData {
-   color: $yellow;
+.bolt-data {
+  color: $yellow;
 
-   span {
-      color: $base0;
-   }
+  span {
+    color: $base0;
+  }
 
-   #selector {
-      width: 100%;
+  .selector {
+    width: 100%;
 
-      select {
-         width: 50%;
-      }
-   }
+    select {
+      width: 50%;
+    }
+  }
 }
 
-
-#mainSelector {
-   background: $base02;
-   bottom: 0;
-   color: $green;
-   height: 3em;
-   left: 0;
-   position: fixed;
-   width: 100%;
-
-   .panelSelector {
-      background: $base02;
-      color: $green;
-      text-align: center;
-      width: 33%;
-
-      img {
-         height: 2em;
-      }
-   }
+.drill-chart {
+  tr {
+    &:nth-child(even) {background: $base03;}
+    &:nth-child(odd) {background: $base02;}
+  }
 }
 
-
-#drillChart {
-   tr {
-      &:nth-child(even) {background: $base03;}
-      &:nth-child(odd) {background: $base02;}
-   }
+.fraction-chart {
+  tr {
+    &:nth-child(even) {background: $base03;}
+    &:nth-child(odd) {background: $base02;}
+  }
 }
 
-#fractionChart {
-   tr {
-      &:nth-child(even) {background: $base03;}
-      &:nth-child(odd) {background: $base02;}
-   }
+.slider {
+  display: inline-block;
+  overflow: hidden;
+
+  .content {
+    position: relative;
+
+    .page {
+      float: left;
+    }
+  }
 }
 
+.page {
+  height: 300px;
+  width: 300px;
 
+  .page-content {
+    background: $dark-black;
+    border-radius: 20px;
+    display: inline-block;
+    margin: .5em;
+    padding: 1em;
+  }
+}
 
 
 

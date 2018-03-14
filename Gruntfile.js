@@ -18,7 +18,7 @@ module.exports = function(grunt) {
           sourceMapName: 'js/sourcemap.map'
         },
         files: {
-          'js/main.min.js': ['js/src/plugin.js','js/src/bolt.js','js/src/main.js',]
+          'js/main.min.js': ['js/src/plugins.js','js/src/bolt.js','js/src/main.js']
         }
       }
     },
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     },
     watch: {
       gruntfile: {
-        files: ['css/src/main.scss', 'js/src/*.js'],
+        files: ['css/src/*', 'js/src/*.js'],
         tasks: ['uglify', 'sass']
       }
     }

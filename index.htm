@@ -9,680 +9,829 @@
 
       <link rel="manifest" href="site.webmanifest">
       <link rel="apple-touch-icon" href="icon.png">
+      <meta name="apple-mobile-web-app-title" content="Tappy-Tap-Tap">
+      <meta name="apple-mobile-web-app-capable" content="yes">
       <!-- Place favicon.ico in the root directory -->
-
+      <link rel="stylesheet" href="css/src/jquery.mobile.structure-1.4.5.css">
+      <link rel="stylesheet" href="css/src/jquery.mobile.icons-1.4.5.css">
+      <link rel="stylesheet" href="css/src/solarized-dark.css">
       <link rel="stylesheet" href="css/main.min.css">
    </head>
    <body>
-      <!-- Add your site or application content here -->
-      <div class="contentPanel boltChart" id="boltChart">
-         <div id="boltData">
-            Major Diameter: <span id="majorDiameter"></span>&Prime;<br />
-            Minor Diamter: <span id="minorDiameter"></span>&Prime;<br />
-            <!-- Threads per inch: <span id="tpi"></span><br /> -->
-            75% Drill Size: <span id="75TapDrill"></span> (<span id="75TapDecimal"></span>&Prime;)<br />
-            50% Drill Size: <span id="50TapDrill"></span> (<span id="50TapDecimal"></span>&Prime;)<br />
-            Close clearance drill size: <span id="closeDrill"></span> (<span id="closeDecimal"></span>&Prime;)<br />
-            Free clearance drill size: <span id="freeDrill"></span> (<span id="freeDecimal"></span>&Prime;)<br />
-            <img src="img/hex_profile.svg" style="padding:.5em;height:1.5em;"/><span id="hexHeadSize"></span><br />
-            <img src="img/cap_profile.svg" style="padding:.5em;height:1.5em;"/><span id="capHeadSize"></span><br />
-            <img src="img/button_profile.svg" style="padding:.5em;height:1.5em;"/><span id="buttonHeadSize"></span><br />
-            <img src="img/flat_profile.svg" style="padding:.5em;height:1.5em;"/><span id="flatHeadSize"></span>
 
+      <div class="content-panel bolt-chart" id="boltChart" data-role="page">
+         <div role="main" class="ui-content">
+            <div class="slider">
+               <div class="content">
+                  <div id="bolt-data" class="bolt-data page">
+                     <div class="page-content">
+                        Major Diameter: <span id="majorDiameter"></span>&Prime;<br />
+                        Minor Diamter: <span id="minorDiameter"></span>&Prime;<br />
+                        75% Drill Size: <span id="75TapDrill"></span> (<span id="75TapDecimal"></span>&Prime;)<br />
+                        50% Drill Size: <span id="50TapDrill"></span> (<span id="50TapDecimal"></span>&Prime;)<br />
+                        Close Fit: <span id="closeDrill"></span> (<span id="closeDecimal"></span>&Prime;)<br />
+                        Free Fit: <span id="freeDrill"></span> (<span id="freeDecimal"></span>&Prime;)<br />
+                     </div>
+                     <span class="swipe-indicator right">&gt;</span>
+                  </div>
+                  <div class="page">
+                     <span class="swipe-indicator left">&lt;</span>
+                     <div class="page-content">
+                        Torque, strength and clamping stuff goes here.
+                     </div>
+                     <span class="swipe-indicator right">&gt;</span>
+                  </div>
+                  <div class="page">
+                     <span class="swipe-indicator left">&lt;</span>
+                     <div class="page-content">
+                        Head Size:
+                        <table>
+                           <tr>
+                              <th><img src="img/hex_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                              <th><img src="img/hexflange_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                              <th><img src="img/square_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                           </tr>
+                           <tr>
+                              <td id="hexHeadSize" style="text-align: center;">&nbsp;</td>
+                              <td id="hexFlangeHeadSize" style="text-align: center;">&nbsp;</td>
+                              <td id="squareHeadSize" style="text-align: center;">&nbsp;</td>
+                           </tr>
+                        </table>
+                        Socket Hex Size:
+                        <table>
+                           <tr>
+                              <th><img src="img/cap_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                              <th><img src="img/button_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                              <th><img src="img/flat_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                              <th><img src="img/setscrew_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                           </tr>
+                           <tr>
+                              <td id="capHeadSize" style="text-align: center;">&nbsp;</td>
+                              <td id="buttonHeadSize" style="text-align: center;">&nbsp;</td>
+                              <td id="flatHeadSize" style="text-align: center;">&nbsp;</td>
+                              <td id="setScrewHeadSize" style="text-align: center;">&nbsp;</td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="selector">
+               <select name="boltSize" id="boltSize"></select>
+               <select name="boltTPI" id="boltTPI"></select>
+            </div>
+            <div data-role="footer" data-position="fixed">
+               <div data-role="navbar">
+                  <ul>
+                     <li><a href="#boltChart" class="boltChartSelector ui-btn-active">Bolt<br>Chart</a></li>
+                     <li><a href="#metricBoltChart" class="metricBoltChartSelector">Metric Bolt<br>Chart</a></li>
+                     <li><a href="#drillChart" class="drillChartSelector"><!-- <img src="img/drill_chart_icon.svg" /><br /> -->Drill<br>Chart</a></li>
+                     <li><a href="#fractionalChart" class="fractionChartSelector">Fractional<br>Chart<!-- <img src="img/fraction_chart_icon.png" /> --></a></li>
+                  </ul>
+               </div>
+            </div>
          </div>
-         <div id="selector">
-            <select name="boltSize" id="boltSize"></select>
-            <select name="boltTPI" id="boltTPI"></select>
+      </div>
+
+      <div class="content-panel metric-bolt-chart " id="metricBoltChart" data-role="page">
+         <div role="main">
+            <div class="slider">
+               <div class="content">
+                  <div id="mertric-bolt-data" class="bolt-data page">
+                     <div class="page-content">
+                        Major Diameter: <span id="mMajorDiameter"></span> mm<br />
+                        Minor Diamter: <span id="mMinorDiameter"></span> mm<br />
+                        75% Drill Size: <span id="m75TapDrill"></span> mm<br />
+                        Tight Fit: <span id="tightDrill"></span> mm<br />
+                        Normal Fit: <span id="normalDrill"></span> mm<br />
+                        Loose Fit: <span id="looseDrill"></span> mm
+                     </div>
+                     <span class="swipe-indicator right">&gt;</span>
+                  </div>
+                  <div class="page">
+                     <span class="swipe-indicator left">&lt;</span>
+                     <div class="page-content">
+                        Torque, strength and clamping stuff goes here.
+                     </div>
+                     <span class="swipe-indicator right">&gt;</span>
+                  </div>
+                  <div class="page">
+                     <span class="swipe-indicator left">&lt;</span>
+                     <div class="page-content">
+                        Head Size:
+                        <table>
+                           <tr>
+                              <th><img src="img/hex_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                              <th><img src="img/hexflange_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                           </tr>
+                           <tr>
+                              <td id="mHexHeadSize" style="text-align: center;">&nbsp;</td>
+                              <td id="mHexFlangeHeadSize" style="text-align: center;">&nbsp;</td>
+                           </tr>
+                        </table>
+                        Socket Hex Size:
+                        <table>
+                           <tr>
+                              <th><img src="img/cap_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                              <th><img src="img/button_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                              <th><img src="img/flat_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                              <th><img src="img/setscrew_profile.svg" style="padding:.5em;height:1.5em;"/></th>
+                           </tr>
+                           <tr>
+                              <td id="mCapHeadSize" style="text-align: center;">&nbsp;</td>
+                              <td id="mButtonHeadSize" style="text-align: center;">&nbsp;</td>
+                              <td id="mFlatHeadSize" style="text-align: center;">&nbsp;</td>
+                              <td id="mSetScrewHeadSize" style="text-align: center;">&nbsp;</td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="selector">
+               <select name="boltSize" id="mBoltSize"></select>
+               <select name="boltTPI" id="mBoltTPI"></select>
+            </div>
+            <div data-role="footer" data-position="fixed">
+               <div data-role="navbar">
+                  <ul>
+                     <li><a href="#boltChart" class="boltChartSelector">Bolt<br>Chart</a></li>
+                     <li><a href="#metricBoltChart" class="metricBoltChartSelector ui-btn-active">Metric Bolt<br>Chart</a></li>
+                     <li><a href="#drillChart" class="drillChartSelector"><!-- <img src="img/drill_chart_icon.svg" /><br /> -->Drill<br>Chart</a></li>
+                     <li><a href="#fractionalChart" class="fractionChartSelector">Fractional<br>Chart<!-- <img src="img/fraction_chart_icon.png" /> --></a></li>
+                  </ul>
+               </div>
+            </div>
          </div>
       </div>
-      <div id="drillChart" class="hidden">
-         <table>
-            <tr><th>inch_callout</th><th>mm</th><th>inch</th></tr>
-            <tr><td>&nbsp;</td><td>0.05 mm</td><td>0.0019&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.06 mm</td><td>0.0024&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.07 mm</td><td>0.0028&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.08 mm</td><td>0.0032&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.10 mm</td><td>0.0039&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.11 mm</td><td>0.0043&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.12 mm</td><td>0.0047&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.13 mm</td><td>0.0051&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.14 mm</td><td>0.0055&Prime;</td></tr>
-            <tr><td>97</td><td>0.15 mm</td><td>0.0059&Prime;</td></tr>
-            <tr><td>96</td><td>0.16 mm</td><td>0.0063&Prime;</td></tr>
-            <tr><td>95</td><td>0.17 mm</td><td>0.0067&Prime;</td></tr>
-            <tr><td>94</td><td>0.18 mm</td><td>0.0071&Prime;</td></tr>
-            <tr><td>93</td><td>0.19 mm</td><td>0.0075&Prime;</td></tr>
-            <tr><td>92</td><td>0.20 mm</td><td>0.0079&Prime;</td></tr>
-            <tr><td>91</td><td>0.21 mm</td><td>0.0083&Prime;</td></tr>
-            <tr><td>90</td><td>0.22 mm</td><td>0.0087&Prime;</td></tr>
-            <tr><td>89</td><td>0.23 mm</td><td>0.0091&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.24 mm</td><td>0.0094&Prime;</td></tr>
-            <tr><td>88</td><td>&nbsp;</td><td>0.0095&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.25 mm</td><td>0.0098&Prime;</td></tr>
-            <tr><td>87</td><td>&nbsp;</td><td>0.0100&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.26 mm</td><td>0.0102&Prime;</td></tr>
-            <tr><td>86</td><td>&nbsp;</td><td>0.0105&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.27 mm</td><td>0.0106&Prime;</td></tr>
-            <tr><td>85</td><td>0.28 mm</td><td>0.0110&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.29 mm</td><td>0.0114&Prime;</td></tr>
-            <tr><td>84</td><td>&nbsp;</td><td>0.0115&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.30 mm</td><td>0.0118&Prime;</td></tr>
-            <tr><td>83</td><td>&nbsp;</td><td>0.0120&Prime;</td></tr>
-            <tr><td>82</td><td>&nbsp;</td><td>0.0125&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.32 mm</td><td>0.0126&Prime;</td></tr>
-            <tr><td>81</td><td>0.33 mm</td><td>0.0130&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.34 mm</td><td>0.0134&Prime;</td></tr>
-            <tr><td>80</td><td>&nbsp;</td><td>0.0135&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.35 mm</td><td>0.0138&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.36 mm</td><td>0.0142&Prime;</td></tr>
-            <tr><td>79</td><td>&nbsp;</td><td>0.0145&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.38 mm</td><td>0.0150&Prime;</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.0156&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.40 mm</td><td>0.0157&Prime;</td></tr>
-            <tr><td>78</td><td>&nbsp;</td><td>0.0160&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.42 mm</td><td>0.0165&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.44 mm</td><td>0.0173&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.45 mm</td><td>0.0177&Prime;</td></tr>
-            <tr><td>77</td><td>&nbsp;</td><td>0.0180&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.46 mm</td><td>0.0181&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.48 mm</td><td>0.0189&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.50 mm</td><td>0.0197&Prime;</td></tr>
-            <tr><td>76</td><td>&nbsp;</td><td>0.0200&Prime;</td></tr>
-            <tr><td>75</td><td>&nbsp;</td><td>0.0210&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.55 mm</td><td>0.0217&Prime;</td></tr>
-            <tr><td>74</td><td>&nbsp;</td><td>0.0225&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.60 mm</td><td>0.0236&Prime;</td></tr>
-            <tr><td>73</td><td>&nbsp;</td><td>0.0240&Prime;</td></tr>
-            <tr><td>72</td><td>&nbsp;</td><td>0.0250&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.65 mm</td><td>0.0256&Prime;</td></tr>
-            <tr><td>71</td><td>&nbsp;</td><td>0.0260&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.70 mm</td><td>0.0276&Prime;</td></tr>
-            <tr><td>70</td><td>&nbsp;</td><td>0.0280&Prime;</td></tr>
-            <tr><td>69</td><td>&nbsp;</td><td>0.0292&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.75 mm</td><td>0.0295&Prime;</td></tr>
-            <tr><td>68</td><td>&nbsp;</td><td>0.0310&Prime;</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.0312&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.80 mm</td><td>0.0315&Prime;</td></tr>
-            <tr><td>67</td><td>&nbsp;</td><td>0.0320&Prime;</td></tr>
-            <tr><td>66</td><td>&nbsp;</td><td>0.0330&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.85 mm</td><td>0.0335&Prime;</td></tr>
-            <tr><td>65</td><td>&nbsp;</td><td>0.0350&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.90 mm</td><td>0.0354&Prime;</td></tr>
-            <tr><td>64</td><td>&nbsp;</td><td>0.0360&Prime;</td></tr>
-            <tr><td>63</td><td>&nbsp;</td><td>0.0370&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>0.95 mm</td><td>0.0374&Prime;</td></tr>
-            <tr><td>62</td><td>&nbsp;</td><td>0.0380&Prime;</td></tr>
-            <tr><td>61</td><td>&nbsp;</td><td>0.0390&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.00 mm</td><td>0.0394&Prime;</td></tr>
-            <tr><td>60</td><td>&nbsp;</td><td>0.0400&Prime;</td></tr>
-            <tr><td>59</td><td>&nbsp;</td><td>0.0410&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.05 mm</td><td>0.0413&Prime;</td></tr>
-            <tr><td>58</td><td>&nbsp;</td><td>0.0420&Prime;</td></tr>
-            <tr><td>57</td><td>&nbsp;</td><td>0.0430&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.10 mm</td><td>0.0433&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.15 mm</td><td>0.0453&Prime;</td></tr>
-            <tr><td>56</td><td>&nbsp;</td><td>0.0465&Prime;</td></tr>
-            <tr><td><sup>3</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.0469&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.20 mm</td><td>0.0472&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.25 mm</td><td>0.0492&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.30 mm</td><td>0.0512&Prime;</td></tr>
-            <tr><td>55</td><td>&nbsp;</td><td>0.0520&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.35 mm</td><td>0.0531&Prime;</td></tr>
-            <tr><td>54</td><td>&nbsp;</td><td>0.0550&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.40 mm</td><td>0.0551&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.45 mm</td><td>0.0571&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.50 mm</td><td>0.0591&Prime;</td></tr>
-            <tr><td>53</td><td>&nbsp;</td><td>0.0595&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.55 mm</td><td>0.0610&Prime;</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.0625&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.60 mm</td><td>0.0630&Prime;</td></tr>
-            <tr><td>52</td><td>&nbsp;</td><td>0.0635&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.65 mm</td><td>0.0650&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.70 mm</td><td>0.0669&Prime;</td></tr>
-            <tr><td>51</td><td>&nbsp;</td><td>0.0670&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.75 mm</td><td>0.0689&Prime;</td></tr>
-            <tr><td>50</td><td>&nbsp;</td><td>0.0700&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.80 mm</td><td>0.0709&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.85 mm</td><td>0.0728&Prime;</td></tr>
-            <tr><td>49</td><td>&nbsp;</td><td>0.0730&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.90 mm</td><td>0.0748&Prime;</td></tr>
-            <tr><td>48</td><td>&nbsp;</td><td>0.0760&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>1.95 mm</td><td>0.0768&Prime;</td></tr>
-            <tr><td><sup>5</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.0781&Prime;</td></tr>
-            <tr><td>47</td><td>&nbsp;</td><td>0.0785&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.00 mm</td><td>0.0787&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.05 mm</td><td>0.0807&Prime;</td></tr>
-            <tr><td>46</td><td>&nbsp;</td><td>0.0810&Prime;</td></tr>
-            <tr><td>45</td><td>&nbsp;</td><td>0.0820&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.10 mm</td><td>0.0827&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.15 mm</td><td>0.0846&Prime;</td></tr>
-            <tr><td>44</td><td>&nbsp;</td><td>0.0860&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.20 mm</td><td>0.0866&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.25 mm</td><td>0.0886&Prime;</td></tr>
-            <tr><td>43</td><td>&nbsp;</td><td>0.0890&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.30 mm</td><td>0.0906&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.35 mm</td><td>0.0925&Prime;</td></tr>
-            <tr><td>42</td><td>&nbsp;</td><td>0.0935&Prime;</td></tr>
-            <tr><td><sup>3</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.0938&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.40 mm</td><td>0.0945&Prime;</td></tr>
-            <tr><td>41</td><td>&nbsp;</td><td>0.0960&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.45 mm</td><td>0.0965&Prime;</td></tr>
-            <tr><td>40</td><td>&nbsp;</td><td>0.0980&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.50 mm</td><td>0.0984&Prime;</td></tr>
-            <tr><td>39</td><td>&nbsp;</td><td>0.0995&Prime;</td></tr>
-            <tr><td>38</td><td>&nbsp;</td><td>0.1015&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.60 mm</td><td>0.1024&Prime;</td></tr>
-            <tr><td>37</td><td>&nbsp;</td><td>0.1040&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.70 mm</td><td>0.1063&Prime;</td></tr>
-            <tr><td>36</td><td>&nbsp;</td><td>0.1065&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.75 mm</td><td>0.1083&Prime;</td></tr>
-            <tr><td><sup>7</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.1094&Prime;</td></tr>
-            <tr><td>35</td><td>&nbsp;</td><td>0.1100&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.80 mm</td><td>0.1102&Prime;</td></tr>
-            <tr><td>34</td><td>&nbsp;</td><td>0.1110&Prime;</td></tr>
-            <tr><td>33</td><td>&nbsp;</td><td>0.1130&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>2.90 mm</td><td>0.1142&Prime;</td></tr>
-            <tr><td>32</td><td>&nbsp;</td><td>0.1160&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.00 mm</td><td>0.1181&Prime;</td></tr>
-            <tr><td>31</td><td>&nbsp;</td><td>0.1200&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.10 mm</td><td>0.1220&Prime;</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>8</sub>&Prime;</td><td>&nbsp;</td><td>0.1250&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.20 mm</td><td>0.1260&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.25 mm</td><td>0.1280&Prime;</td></tr>
-            <tr><td>30</td><td>&nbsp;</td><td>0.1285&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.30 mm</td><td>0.1299&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.40 mm</td><td>0.1339&Prime;</td></tr>
-            <tr><td>29</td><td>&nbsp;</td><td>0.1360&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.50 mm</td><td>0.1378&Prime;</td></tr>
-            <tr><td>28</td><td>&nbsp;</td><td>0.1405&Prime;</td></tr>
-            <tr><td><sup>9</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.1406&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.60 mm</td><td>0.1417&Prime;</td></tr>
-            <tr><td>27</td><td>&nbsp;</td><td>0.1440&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.70 mm</td><td>0.1457&Prime;</td></tr>
-            <tr><td>26</td><td>&nbsp;</td><td>0.1470&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.75 mm</td><td>0.1476&Prime;</td></tr>
-            <tr><td>25</td><td>&nbsp;</td><td>0.1495&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.80 mm</td><td>0.1496&Prime;</td></tr>
-            <tr><td>24</td><td>&nbsp;</td><td>0.1520&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>3.90 mm</td><td>0.1535&Prime;</td></tr>
-            <tr><td>23</td><td>&nbsp;</td><td>0.1540&Prime;</td></tr>
-            <tr><td><sup>5</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.1562&Prime;</td></tr>
-            <tr><td>22</td><td>&nbsp;</td><td>0.1570&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>4.00 mm</td><td>0.1575&Prime;</td></tr>
-            <tr><td>21</td><td>&nbsp;</td><td>0.1590&Prime;</td></tr>
-            <tr><td>20</td><td>&nbsp;</td><td>0.1610&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>4.10 mm</td><td>0.1614&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>4.20 mm</td><td>0.1654&Prime;</td></tr>
-            <tr><td>19</td><td>&nbsp;</td><td>0.1660&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>4.25 mm</td><td>0.1673&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>4.30 mm</td><td>0.1693&Prime;</td></tr>
-            <tr><td>18</td><td>&nbsp;</td><td>0.1695&Prime;</td></tr>
-            <tr><td><sup>11</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.1719&Prime;</td></tr>
-            <tr><td>17</td><td>&nbsp;</td><td>0.1730&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>4.40 mm</td><td>0.1732&Prime;</td></tr>
-            <tr><td>16</td><td>&nbsp;</td><td>0.1770&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>4.50 mm</td><td>0.1772&Prime;</td></tr>
-            <tr><td>15</td><td>&nbsp;</td><td>0.1800&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>4.60 mm</td><td>0.1811&Prime;</td></tr>
-            <tr><td>14</td><td>&nbsp;</td><td>0.1820&Prime;</td></tr>
-            <tr><td>13</td><td>4.70 mm</td><td>0.1850&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>4.75 mm</td><td>0.1870&Prime;</td></tr>
-            <tr><td><sup>3</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.1875&Prime;</td></tr>
-            <tr><td>12</td><td>4.80 mm</td><td>0.1890&Prime;</td></tr>
-            <tr><td>11</td><td>&nbsp;</td><td>0.1910&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>4.90 mm</td><td>0.1929&Prime;</td></tr>
-            <tr><td>10</td><td>&nbsp;</td><td>0.1935&Prime;</td></tr>
-            <tr><td>9</td><td>&nbsp;</td><td>0.1960&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.00 mm</td><td>0.1969&Prime;</td></tr>
-            <tr><td>8</td><td>&nbsp;</td><td>0.1990&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.10 mm</td><td>0.2008&Prime;</td></tr>
-            <tr><td>7</td><td>&nbsp;</td><td>0.2010&Prime;</td></tr>
-            <tr><td><sup>13</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.2031&Prime;</td></tr>
-            <tr><td>6</td><td>&nbsp;</td><td>0.2040&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.20 mm</td><td>0.2047&Prime;</td></tr>
-            <tr><td>5</td><td>&nbsp;</td><td>0.2055&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.25 mm</td><td>0.2067&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.30 mm</td><td>0.2087&Prime;</td></tr>
-            <tr><td>4</td><td>&nbsp;</td><td>0.2090&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.40 mm</td><td>0.2126&Prime;</td></tr>
-            <tr><td>3</td><td>&nbsp;</td><td>0.2130&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.50 mm</td><td>0.2165&Prime;</td></tr>
-            <tr><td><sup>7</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.2188&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.60 mm</td><td>0.2205&Prime;</td></tr>
-            <tr><td>2</td><td>&nbsp;</td><td>0.2210&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.70 mm</td><td>0.2244&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.75 mm</td><td>0.2264&Prime;</td></tr>
-            <tr><td>1</td><td>&nbsp;</td><td>0.2280&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.80 mm</td><td>0.2283&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>5.90 mm</td><td>0.2323&Prime;</td></tr>
-            <tr><td>A</td><td>&nbsp;</td><td>0.2340&Prime;</td></tr>
-            <tr><td><sup>15</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.2344&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.00 mm</td><td>0.2362&Prime;</td></tr>
-            <tr><td>B</td><td>&nbsp;</td><td>0.2380&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.10 mm</td><td>0.2402&Prime;</td></tr>
-            <tr><td>C</td><td>&nbsp;</td><td>0.2420&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.20 mm</td><td>0.2441&Prime;</td></tr>
-            <tr><td>D</td><td>&nbsp;</td><td>0.2460&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.25 mm</td><td>0.2461&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.30 mm</td><td>0.2480&Prime;</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>4</sub>&Prime;</td><td>&nbsp;</td><td>0.2500&Prime;</td></tr>
-            <tr><td>E</td><td>&nbsp;</td><td>0.2500&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.40 mm</td><td>0.2520&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.50 mm</td><td>0.2559&Prime;</td></tr>
-            <tr><td>F</td><td>&nbsp;</td><td>0.2570&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.60 mm</td><td>0.2598&Prime;</td></tr>
-            <tr><td>G</td><td>&nbsp;</td><td>0.2610&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.70 mm</td><td>0.2638&Prime;</td></tr>
-            <tr><td><sup>17</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.2656&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.75 mm</td><td>0.2657&Prime;</td></tr>
-            <tr><td>H</td><td>&nbsp;</td><td>0.2660&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.80 mm</td><td>0.2677&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>6.90 mm</td><td>0.2717&Prime;</td></tr>
-            <tr><td>I</td><td>&nbsp;</td><td>0.2720&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.00 mm</td><td>0.2756&Prime;</td></tr>
-            <tr><td>J</td><td>&nbsp;</td><td>0.2770&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.10 mm</td><td>0.2795&Prime;</td></tr>
-            <tr><td>K</td><td>&nbsp;</td><td>0.2810&Prime;</td></tr>
-            <tr><td><sup>9</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.2812&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.20 mm</td><td>0.2835&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.25 mm</td><td>0.2854&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.30 mm</td><td>0.2874&Prime;</td></tr>
-            <tr><td>L</td><td>&nbsp;</td><td>0.2900&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.40 mm</td><td>0.2913&Prime;</td></tr>
-            <tr><td>M</td><td>&nbsp;</td><td>0.2950&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.50 mm</td><td>0.2953&Prime;</td></tr>
-            <tr><td><sup>19</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.2969&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.60 mm</td><td>0.2992&Prime;</td></tr>
-            <tr><td>N</td><td>&nbsp;</td><td>0.3020&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.70 mm</td><td>0.3031&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.75 mm</td><td>0.3051&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.80 mm</td><td>0.3071&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>7.90 mm</td><td>0.3110&Prime;</td></tr>
-            <tr><td><sup>5</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.3125&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.00 mm</td><td>0.3150&Prime;</td></tr>
-            <tr><td>O</td><td>&nbsp;</td><td>0.3160&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.10 mm</td><td>0.3189&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.20 mm</td><td>0.3228&Prime;</td></tr>
-            <tr><td>P</td><td>&nbsp;</td><td>0.3230&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.25 mm</td><td>0.3248&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.30 mm</td><td>0.3268&Prime;</td></tr>
-            <tr><td><sup>21</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.3281&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.40 mm</td><td>0.3307&Prime;</td></tr>
-            <tr><td>Q</td><td>&nbsp;</td><td>0.3320&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.50 mm</td><td>0.3346&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.60 mm</td><td>0.3386&Prime;</td></tr>
-            <tr><td>R</td><td>&nbsp;</td><td>0.3390&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.70 mm</td><td>0.3425&Prime;</td></tr>
-            <tr><td><sup>11</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.3438&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.75 mm</td><td>0.3445&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.80 mm</td><td>0.3465&Prime;</td></tr>
-            <tr><td>S</td><td>&nbsp;</td><td>0.3480&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>8.90 mm</td><td>0.3504&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.00 mm</td><td>0.3543&Prime;</td></tr>
-            <tr><td>T</td><td>&nbsp;</td><td>0.3580&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.10 mm</td><td>0.3583&Prime;</td></tr>
-            <tr><td><sup>23</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.3594&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.20 mm</td><td>0.3622&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.25 mm</td><td>0.3642&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.30 mm</td><td>0.3661&Prime;</td></tr>
-            <tr><td>U</td><td>&nbsp;</td><td>0.3680&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.40 mm</td><td>0.3701&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.50 mm</td><td>0.3740&Prime;</td></tr>
-            <tr><td><sup>3</sup>&frasl;<sub>8</sub>&Prime;</td><td>&nbsp;</td><td>0.3750&Prime;</td></tr>
-            <tr><td>V</td><td>&nbsp;</td><td>0.3770&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.60 mm</td><td>0.3780&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.70 mm</td><td>0.3819&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.75 mm</td><td>0.3839&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.80 mm</td><td>0.3858&Prime;</td></tr>
-            <tr><td>W</td><td>&nbsp;</td><td>0.3860&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>9.90 mm</td><td>0.3898&Prime;</td></tr>
-            <tr><td><sup>25</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.3906&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>10.00 mm</td><td>0.3937&Prime;</td></tr>
-            <tr><td>X</td><td>&nbsp;</td><td>0.3970&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>10.20 mm</td><td>0.4016&Prime;</td></tr>
-            <tr><td>Y</td><td>&nbsp;</td><td>0.4040&Prime;</td></tr>
-            <tr><td><sup>13</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.4062&Prime;</td></tr>
-            <tr><td>Z</td><td>&nbsp;</td><td>0.4130&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>10.50 mm</td><td>0.4134&Prime;</td></tr>
-            <tr><td><sup>27</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.4219&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>10.80 mm</td><td>0.4252&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>11.00 mm</td><td>0.4330&Prime;</td></tr>
-            <tr><td><sup>7</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.4375&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>11.20 mm</td><td>0.4409&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>11.50 mm</td><td>0.4528&Prime;</td></tr>
-            <tr><td><sup>29</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.4531&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>11.80 mm</td><td>0.4646&Prime;</td></tr>
-            <tr><td><sup>15</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.4688&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>12.00 mm</td><td>0.4724&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>12.20 mm</td><td>0.4803&Prime;</td></tr>
-            <tr><td><sup>31</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.4844&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>12.50 mm</td><td>0.4921&Prime;</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>2</sub>&Prime;</td><td>12.70 mm</td><td>0.5000&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>13.00 mm</td><td>0.5118&Prime;</td></tr>
-            <tr><td><sup>33</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.5156&Prime;</td></tr>
-            <tr><td><sup>17</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.5312&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>13.50 mm</td><td>0.5315&Prime;</td></tr>
-            <tr><td><sup>35</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.5469&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>14.00 mm</td><td>0.5512&Prime;</td></tr>
-            <tr><td><sup>9</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.5625&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>14.50 mm</td><td>0.5709&Prime;</td></tr>
-            <tr><td><sup>37</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.5781&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>14.75 mm</td><td>0.5807&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>15.00 mm</td><td>0.5906&Prime;</td></tr>
-            <tr><td><sup>19</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.5938&Prime;</td></tr>
-            <tr><td><sup>39</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.6094&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>15.50 mm</td><td>0.6102&Prime;</td></tr>
-            <tr><td><sup>5</sup>&frasl;<sub>8</sub>&Prime;</td><td>&nbsp;</td><td>0.6250&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>16.00 mm</td><td>0.6299&Prime;</td></tr>
-            <tr><td><sup>41</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.6406&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>16.50 mm</td><td>0.6496&Prime;</td></tr>
-            <tr><td><sup>21</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.6562&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>17.00 mm</td><td>0.6693&Prime;</td></tr>
-            <tr><td><sup>43</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.6719&Prime;</td></tr>
-            <tr><td><sup>11</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.6875&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>17.50 mm</td><td>0.6890&Prime;</td></tr>
-            <tr><td><sup>45</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.7031&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>18.00 mm</td><td>0.7087&Prime;</td></tr>
-            <tr><td><sup>23</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.7188&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>18.50 mm</td><td>0.7283&Prime;</td></tr>
-            <tr><td><sup>47</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.7344&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>19.00 mm</td><td>0.7480&Prime;</td></tr>
-            <tr><td><sup>3</sup>&frasl;<sub>4</sub>&Prime;</td><td>&nbsp;</td><td>0.7500&Prime;</td></tr>
-            <tr><td><sup>49</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.7656&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>19.50 mm</td><td>0.7677&Prime;</td></tr>
-            <tr><td><sup>25</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.7812&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>20.00 mm</td><td>0.7874&Prime;</td></tr>
-            <tr><td><sup>51</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.7969&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>20.50 mm</td><td>0.8071&Prime;</td></tr>
-            <tr><td><sup>13</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.8125&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>21.00 mm</td><td>0.8268&Prime;</td></tr>
-            <tr><td><sup>53</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.8281&Prime;</td></tr>
-            <tr><td><sup>27</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.8438&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>21.50 mm</td><td>0.8465&Prime;</td></tr>
-            <tr><td><sup>55</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.8594&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>22.00 mm</td><td>0.8661&Prime;</td></tr>
-            <tr><td><sup>7</sup>&frasl;<sub>8</sub>&Prime;</td><td>&nbsp;</td><td>0.8750&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>22.50 mm</td><td>0.8858&Prime;</td></tr>
-            <tr><td><sup>57</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.8906&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>23.00 mm</td><td>0.9055&Prime;</td></tr>
-            <tr><td><sup>29</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.9062&Prime;</td></tr>
-            <tr><td><sup>59</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.9219&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>23.50 mm</td><td>0.9252&Prime;</td></tr>
-            <tr><td><sup>15</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.9375&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>24.00 mm</td><td>0.9449&Prime;</td></tr>
-            <tr><td><sup>61</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.9531&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>24.50 mm</td><td>0.9646&Prime;</td></tr>
-            <tr><td><sup>31</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.9688&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>25.00 mm</td><td>0.9843&Prime;</td></tr>
-            <tr><td><sup>63</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.9844&Prime;</td></tr>
-            <tr><td>1</td><td>&nbsp;</td><td>1.0000&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>25.50 mm</td><td>1.0039&Prime;</td></tr>
-            <tr><td>1 1/64</td><td>&nbsp;</td><td>1.0156&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>26.00 mm</td><td>1.0236&Prime;</td></tr>
-            <tr><td>1 1/32</td><td>&nbsp;</td><td>1.0312&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>26.50 mm</td><td>1.0443&Prime;</td></tr>
-            <tr><td>1 3/64</td><td>&nbsp;</td><td>1.0469&Prime;</td></tr>
-            <tr><td>1 1/16</td><td>&nbsp;</td><td>1.0625&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>27.00 mm</td><td>1.0630&Prime;</td></tr>
-            <tr><td>1 5/64</td><td>&nbsp;</td><td>1.0781&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>27.50 mm</td><td>1.0827&Prime;</td></tr>
-            <tr><td>1 3/32</td><td>&nbsp;</td><td>1.0938&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>28.00 mm</td><td>1.1024&Prime;</td></tr>
-            <tr><td>1 7/64</td><td>&nbsp;</td><td>1.1094&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>28.50 mm</td><td>1.1220&Prime;</td></tr>
-            <tr><td>1 1/8</td><td>&nbsp;</td><td>1.1250&Prime;</td></tr>
-            <tr><td>1 9/64</td><td>&nbsp;</td><td>1.1406&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>29.00 mm</td><td>1.1417&Prime;</td></tr>
-            <tr><td>1 5/32</td><td>&nbsp;</td><td>1.1562&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>29.50 mm</td><td>1.1614&Prime;</td></tr>
-            <tr><td>1 11/64</td><td>&nbsp;</td><td>1.1719&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>30.00 mm</td><td>1.1811&Prime;</td></tr>
-            <tr><td>1 3/16</td><td>&nbsp;</td><td>1.1875&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>30.50 mm</td><td>1.2008&Prime;</td></tr>
-            <tr><td>1 13/64</td><td>&nbsp;</td><td>1.2031&Prime;</td></tr>
-            <tr><td>1 7/32</td><td>&nbsp;</td><td>1.2188&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>31.00 mm</td><td>1.2204&Prime;</td></tr>
-            <tr><td>1 15/64</td><td>&nbsp;</td><td>1.2344&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>31.50 mm</td><td>1.2402&Prime;</td></tr>
-            <tr><td>1 1/4</td><td>&nbsp;</td><td>1.2500&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>32.00 mm</td><td>1.2598&Prime;</td></tr>
-            <tr><td>1 17/64</td><td>&nbsp;</td><td>1.2656&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>32.50 mm</td><td>1.2795&Prime;</td></tr>
-            <tr><td>1 9/32</td><td>&nbsp;</td><td>1.2812&Prime;</td></tr>
-            <tr><td>1 19/64</td><td>&nbsp;</td><td>1.2969&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>33.00 mm</td><td>1.2992&Prime;</td></tr>
-            <tr><td>1 5/16</td><td>&nbsp;</td><td>1.3125&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>33.50 mm</td><td>1.3189&Prime;</td></tr>
-            <tr><td>1 21/64</td><td>&nbsp;</td><td>1.3281&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>34.00 mm</td><td>1.3386&Prime;</td></tr>
-            <tr><td>1 11/32</td><td>&nbsp;</td><td>1.3438&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>34.50 mm</td><td>1.3583&Prime;</td></tr>
-            <tr><td>1 23/64</td><td>&nbsp;</td><td>1.3594&Prime;</td></tr>
-            <tr><td>1 3/8</td><td>&nbsp;</td><td>1.3750&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>35.00 mm</td><td>1.3780&Prime;</td></tr>
-            <tr><td>1 25/64</td><td>&nbsp;</td><td>1.3906&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>35.50 mm</td><td>1.3976&Prime;</td></tr>
-            <tr><td>1 13/32</td><td>&nbsp;</td><td>1.4062&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>36.00 mm</td><td>1.4173&Prime;</td></tr>
-            <tr><td>1 27/64</td><td>&nbsp;</td><td>1.4219&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>36.50 mm</td><td>1.4370&Prime;</td></tr>
-            <tr><td>1 7/16</td><td>&nbsp;</td><td>1.4375&Prime;</td></tr>
-            <tr><td>1 29/64</td><td>&nbsp;</td><td>1.4531&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>37.00 mm</td><td>1.4567&Prime;</td></tr>
-            <tr><td>1 15/32</td><td>&nbsp;</td><td>1.4688&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>37.50 mm</td><td>1.4764&Prime;</td></tr>
-            <tr><td>1 31/64</td><td>&nbsp;</td><td>1.4844&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>38.00 mm</td><td>1.4961&Prime;</td></tr>
-            <tr><td>1 1/2</td><td>&nbsp;</td><td>1.5000&Prime;</td></tr>
-            <tr><td>1 33/64</td><td>&nbsp;</td><td>1.5165&Prime;</td></tr>
-            <tr><td>1 17/32</td><td>&nbsp;</td><td>1.5312&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>39.00 mm</td><td>1.5354&Prime;</td></tr>
-            <tr><td>1 35/64</td><td>&nbsp;</td><td>1.5469&Prime;</td></tr>
-            <tr><td>1 9/16</td><td>&nbsp;</td><td>1.5625&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>40.00 mm</td><td>1.5748&Prime;</td></tr>
-            <tr><td>1 37/64</td><td>&nbsp;</td><td>1.5781&Prime;</td></tr>
-            <tr><td>1 19/32</td><td>&nbsp;</td><td>1.5938&Prime;</td></tr>
-            <tr><td>1 39/64</td><td>&nbsp;</td><td>1.6094&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>41.00 mm</td><td>1.6142&Prime;</td></tr>
-            <tr><td>1 5/8</td><td>&nbsp;</td><td>1.6250&Prime;</td></tr>
-            <tr><td>1 41/64</td><td>&nbsp;</td><td>1.6406&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>42.00 mm</td><td>1.6535&Prime;</td></tr>
-            <tr><td>1 21/32</td><td>&nbsp;</td><td>1.6562&Prime;</td></tr>
-            <tr><td>1 43/64</td><td>&nbsp;</td><td>1.6719&Prime;</td></tr>
-            <tr><td>1 11/16</td><td>&nbsp;</td><td>1.6875&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>43.00 mm</td><td>1.6929&Prime;</td></tr>
-            <tr><td>1 45/64</td><td>&nbsp;</td><td>1.7031&Prime;</td></tr>
-            <tr><td>1 23/32</td><td>&nbsp;</td><td>1.7188&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>44.00 mm</td><td>1.7323&Prime;</td></tr>
-            <tr><td>1 47/64</td><td>&nbsp;</td><td>1.7344&Prime;</td></tr>
-            <tr><td>1 3/4</td><td>&nbsp;</td><td>1.7500&Prime;</td></tr>
-            <tr><td>1 49/64</td><td>&nbsp;</td><td>1.7656&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>45.00 mm</td><td>1.7717&Prime;</td></tr>
-            <tr><td>1 25/32</td><td>&nbsp;</td><td>1.7812&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>46.00 mm</td><td>1.8110&Prime;</td></tr>
-            <tr><td>1 13/16</td><td>&nbsp;</td><td>1.8125&Prime;</td></tr>
-            <tr><td>1 27/32</td><td>&nbsp;</td><td>1.8438&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>47.00 mm</td><td>1.8504&Prime;</td></tr>
-            <tr><td>1 7/8</td><td>&nbsp;</td><td>1.8750&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>48.00 mm</td><td>1.8898&Prime;</td></tr>
-            <tr><td>1 29/32</td><td>&nbsp;</td><td>1.9062&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>49.00 mm</td><td>1.9291&Prime;</td></tr>
-            <tr><td>1 15/16</td><td>&nbsp;</td><td>1.9375&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>50.00 mm</td><td>1.9625&Prime;</td></tr>
-            <tr><td>1 31/32</td><td>&nbsp;</td><td>1.9688&Prime;</td></tr>
-            <tr><td>2</td><td>&nbsp;</td><td>2.0000&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>51.00 mm</td><td>2.0079&Prime;</td></tr>
-            <tr><td>2 1/32</td><td>&nbsp;</td><td>2.0312&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>52.00 mm</td><td>2.0472&Prime;</td></tr>
-            <tr><td>2 1/16</td><td>&nbsp;</td><td>2.0625&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>53.00 mm</td><td>2.0866&Prime;</td></tr>
-            <tr><td>2 3/32</td><td>&nbsp;</td><td>2.0938&Prime;</td></tr>
-            <tr><td>2 1/8</td><td>&nbsp;</td><td>2.1250&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>54.00 mm</td><td>2.1260&Prime;</td></tr>
-            <tr><td>2 5/32</td><td>&nbsp;</td><td>2.1562&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>55.00 mm</td><td>2.1654&Prime;</td></tr>
-            <tr><td>2 3/16</td><td>&nbsp;</td><td>2.1875&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>56.00 mm</td><td>2.2000&Prime;</td></tr>
-            <tr><td>2 7/32</td><td>&nbsp;</td><td>2.2188&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>57.00 mm</td><td>2.2441&Prime;</td></tr>
-            <tr><td>2 1/4</td><td>&nbsp;</td><td>2.2500&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>58.00 mm</td><td>2.2835&Prime;</td></tr>
-            <tr><td>2 5/16</td><td>&nbsp;</td><td>2.3125&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>59.00 mm</td><td>2.3228&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>60.00 mm</td><td>2.3622&Prime;</td></tr>
-            <tr><td>2 3/8</td><td>&nbsp;</td><td>2.3750&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>61.00 mm</td><td>2.4016&Prime;</td></tr>
-            <tr><td>2 7/16</td><td>&nbsp;</td><td>2.4375&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>62.00 mm</td><td>2.4409&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>63.00 mm</td><td>2.4803&Prime;</td></tr>
-            <tr><td>2 1/2</td><td>&nbsp;</td><td>2.5000&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>64.00 mm</td><td>2.5197&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>65.00 mm</td><td>2.5591&Prime;</td></tr>
-            <tr><td>2 9/16</td><td>&nbsp;</td><td>2.5625&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>66.00 mm</td><td>2.5984&Prime;</td></tr>
-            <tr><td>2 5/8</td><td>&nbsp;</td><td>2.6250&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>67.00 mm</td><td>2.6378&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>68.00 mm</td><td>2.6772&Prime;</td></tr>
-            <tr><td>2 11/16</td><td>&nbsp;</td><td>2.6875&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>69.00 mm</td><td>2.7165&Prime;</td></tr>
-            <tr><td>2 3/4</td><td>&nbsp;</td><td>2.7500&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>70.00 mm</td><td>2.7559&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>71.00 mm</td><td>2.7953&Prime;</td></tr>
-            <tr><td>2 13/16</td><td>&nbsp;</td><td>2.8125&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>72.00 mm</td><td>2.8346&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>73.00 mm</td><td>2.8740&Prime;</td></tr>
-            <tr><td>2 7/8</td><td>&nbsp;</td><td>2.8750&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>74.00 mm</td><td>2.9134&Prime;</td></tr>
-            <tr><td>2 15/16</td><td>&nbsp;</td><td>2.9375&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>75.00 mm</td><td>2.9528&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>76.00 mm</td><td>2.9921&Prime;</td></tr>
-            <tr><td>3</td><td>&nbsp;</td><td>3.0000&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>77.00 mm</td><td>3.0315&Prime;</td></tr>
-            <tr><td>&nbsp;</td><td>78.00 mm</td><td>3.0709&Prime;</td></tr>
-            <tr><td>3 1/8</td><td>&nbsp;</td><td>3.1250&Prime;</td></tr>
-            <tr><td>3 1/4</td><td>&nbsp;</td><td>3.2500&Prime;</td></tr>
-            <tr><td>3 1/2</td><td>&nbsp;</td><td>3.5000&Prime;</td></tr>
-         </table>
+
+      <div id="drillChart" class="content-panel drill-chart" data-role="page">
+         <div role="main" class="ui-content">
+            <table>
+               <tr><th>inch_callout</th><th>mm</th><th>inch</th></tr>
+               <tr><td>&nbsp;</td><td>0.05 mm</td><td>0.0019&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.06 mm</td><td>0.0024&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.07 mm</td><td>0.0028&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.08 mm</td><td>0.0032&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.10 mm</td><td>0.0039&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.11 mm</td><td>0.0043&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.12 mm</td><td>0.0047&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.13 mm</td><td>0.0051&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.14 mm</td><td>0.0055&Prime;</td></tr>
+               <tr><td>97</td><td>0.15 mm</td><td>0.0059&Prime;</td></tr>
+               <tr><td>96</td><td>0.16 mm</td><td>0.0063&Prime;</td></tr>
+               <tr><td>95</td><td>0.17 mm</td><td>0.0067&Prime;</td></tr>
+               <tr><td>94</td><td>0.18 mm</td><td>0.0071&Prime;</td></tr>
+               <tr><td>93</td><td>0.19 mm</td><td>0.0075&Prime;</td></tr>
+               <tr><td>92</td><td>0.20 mm</td><td>0.0079&Prime;</td></tr>
+               <tr><td>91</td><td>0.21 mm</td><td>0.0083&Prime;</td></tr>
+               <tr><td>90</td><td>0.22 mm</td><td>0.0087&Prime;</td></tr>
+               <tr><td>89</td><td>0.23 mm</td><td>0.0091&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.24 mm</td><td>0.0094&Prime;</td></tr>
+               <tr><td>88</td><td>&nbsp;</td><td>0.0095&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.25 mm</td><td>0.0098&Prime;</td></tr>
+               <tr><td>87</td><td>&nbsp;</td><td>0.0100&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.26 mm</td><td>0.0102&Prime;</td></tr>
+               <tr><td>86</td><td>&nbsp;</td><td>0.0105&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.27 mm</td><td>0.0106&Prime;</td></tr>
+               <tr><td>85</td><td>0.28 mm</td><td>0.0110&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.29 mm</td><td>0.0114&Prime;</td></tr>
+               <tr><td>84</td><td>&nbsp;</td><td>0.0115&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.30 mm</td><td>0.0118&Prime;</td></tr>
+               <tr><td>83</td><td>&nbsp;</td><td>0.0120&Prime;</td></tr>
+               <tr><td>82</td><td>&nbsp;</td><td>0.0125&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.32 mm</td><td>0.0126&Prime;</td></tr>
+               <tr><td>81</td><td>0.33 mm</td><td>0.0130&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.34 mm</td><td>0.0134&Prime;</td></tr>
+               <tr><td>80</td><td>&nbsp;</td><td>0.0135&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.35 mm</td><td>0.0138&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.36 mm</td><td>0.0142&Prime;</td></tr>
+               <tr><td>79</td><td>&nbsp;</td><td>0.0145&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.38 mm</td><td>0.0150&Prime;</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.0156&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.40 mm</td><td>0.0157&Prime;</td></tr>
+               <tr><td>78</td><td>&nbsp;</td><td>0.0160&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.42 mm</td><td>0.0165&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.44 mm</td><td>0.0173&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.45 mm</td><td>0.0177&Prime;</td></tr>
+               <tr><td>77</td><td>&nbsp;</td><td>0.0180&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.46 mm</td><td>0.0181&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.48 mm</td><td>0.0189&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.50 mm</td><td>0.0197&Prime;</td></tr>
+               <tr><td>76</td><td>&nbsp;</td><td>0.0200&Prime;</td></tr>
+               <tr><td>75</td><td>&nbsp;</td><td>0.0210&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.55 mm</td><td>0.0217&Prime;</td></tr>
+               <tr><td>74</td><td>&nbsp;</td><td>0.0225&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.60 mm</td><td>0.0236&Prime;</td></tr>
+               <tr><td>73</td><td>&nbsp;</td><td>0.0240&Prime;</td></tr>
+               <tr><td>72</td><td>&nbsp;</td><td>0.0250&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.65 mm</td><td>0.0256&Prime;</td></tr>
+               <tr><td>71</td><td>&nbsp;</td><td>0.0260&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.70 mm</td><td>0.0276&Prime;</td></tr>
+               <tr><td>70</td><td>&nbsp;</td><td>0.0280&Prime;</td></tr>
+               <tr><td>69</td><td>&nbsp;</td><td>0.0292&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.75 mm</td><td>0.0295&Prime;</td></tr>
+               <tr><td>68</td><td>&nbsp;</td><td>0.0310&Prime;</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.0312&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.80 mm</td><td>0.0315&Prime;</td></tr>
+               <tr><td>67</td><td>&nbsp;</td><td>0.0320&Prime;</td></tr>
+               <tr><td>66</td><td>&nbsp;</td><td>0.0330&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.85 mm</td><td>0.0335&Prime;</td></tr>
+               <tr><td>65</td><td>&nbsp;</td><td>0.0350&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.90 mm</td><td>0.0354&Prime;</td></tr>
+               <tr><td>64</td><td>&nbsp;</td><td>0.0360&Prime;</td></tr>
+               <tr><td>63</td><td>&nbsp;</td><td>0.0370&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>0.95 mm</td><td>0.0374&Prime;</td></tr>
+               <tr><td>62</td><td>&nbsp;</td><td>0.0380&Prime;</td></tr>
+               <tr><td>61</td><td>&nbsp;</td><td>0.0390&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.00 mm</td><td>0.0394&Prime;</td></tr>
+               <tr><td>60</td><td>&nbsp;</td><td>0.0400&Prime;</td></tr>
+               <tr><td>59</td><td>&nbsp;</td><td>0.0410&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.05 mm</td><td>0.0413&Prime;</td></tr>
+               <tr><td>58</td><td>&nbsp;</td><td>0.0420&Prime;</td></tr>
+               <tr><td>57</td><td>&nbsp;</td><td>0.0430&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.10 mm</td><td>0.0433&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.15 mm</td><td>0.0453&Prime;</td></tr>
+               <tr><td>56</td><td>&nbsp;</td><td>0.0465&Prime;</td></tr>
+               <tr><td><sup>3</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.0469&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.20 mm</td><td>0.0472&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.25 mm</td><td>0.0492&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.30 mm</td><td>0.0512&Prime;</td></tr>
+               <tr><td>55</td><td>&nbsp;</td><td>0.0520&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.35 mm</td><td>0.0531&Prime;</td></tr>
+               <tr><td>54</td><td>&nbsp;</td><td>0.0550&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.40 mm</td><td>0.0551&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.45 mm</td><td>0.0571&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.50 mm</td><td>0.0591&Prime;</td></tr>
+               <tr><td>53</td><td>&nbsp;</td><td>0.0595&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.55 mm</td><td>0.0610&Prime;</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.0625&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.60 mm</td><td>0.0630&Prime;</td></tr>
+               <tr><td>52</td><td>&nbsp;</td><td>0.0635&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.65 mm</td><td>0.0650&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.70 mm</td><td>0.0669&Prime;</td></tr>
+               <tr><td>51</td><td>&nbsp;</td><td>0.0670&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.75 mm</td><td>0.0689&Prime;</td></tr>
+               <tr><td>50</td><td>&nbsp;</td><td>0.0700&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.80 mm</td><td>0.0709&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.85 mm</td><td>0.0728&Prime;</td></tr>
+               <tr><td>49</td><td>&nbsp;</td><td>0.0730&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.90 mm</td><td>0.0748&Prime;</td></tr>
+               <tr><td>48</td><td>&nbsp;</td><td>0.0760&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>1.95 mm</td><td>0.0768&Prime;</td></tr>
+               <tr><td><sup>5</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.0781&Prime;</td></tr>
+               <tr><td>47</td><td>&nbsp;</td><td>0.0785&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.00 mm</td><td>0.0787&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.05 mm</td><td>0.0807&Prime;</td></tr>
+               <tr><td>46</td><td>&nbsp;</td><td>0.0810&Prime;</td></tr>
+               <tr><td>45</td><td>&nbsp;</td><td>0.0820&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.10 mm</td><td>0.0827&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.15 mm</td><td>0.0846&Prime;</td></tr>
+               <tr><td>44</td><td>&nbsp;</td><td>0.0860&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.20 mm</td><td>0.0866&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.25 mm</td><td>0.0886&Prime;</td></tr>
+               <tr><td>43</td><td>&nbsp;</td><td>0.0890&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.30 mm</td><td>0.0906&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.35 mm</td><td>0.0925&Prime;</td></tr>
+               <tr><td>42</td><td>&nbsp;</td><td>0.0935&Prime;</td></tr>
+               <tr><td><sup>3</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.0938&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.40 mm</td><td>0.0945&Prime;</td></tr>
+               <tr><td>41</td><td>&nbsp;</td><td>0.0960&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.45 mm</td><td>0.0965&Prime;</td></tr>
+               <tr><td>40</td><td>&nbsp;</td><td>0.0980&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.50 mm</td><td>0.0984&Prime;</td></tr>
+               <tr><td>39</td><td>&nbsp;</td><td>0.0995&Prime;</td></tr>
+               <tr><td>38</td><td>&nbsp;</td><td>0.1015&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.60 mm</td><td>0.1024&Prime;</td></tr>
+               <tr><td>37</td><td>&nbsp;</td><td>0.1040&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.70 mm</td><td>0.1063&Prime;</td></tr>
+               <tr><td>36</td><td>&nbsp;</td><td>0.1065&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.75 mm</td><td>0.1083&Prime;</td></tr>
+               <tr><td><sup>7</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.1094&Prime;</td></tr>
+               <tr><td>35</td><td>&nbsp;</td><td>0.1100&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.80 mm</td><td>0.1102&Prime;</td></tr>
+               <tr><td>34</td><td>&nbsp;</td><td>0.1110&Prime;</td></tr>
+               <tr><td>33</td><td>&nbsp;</td><td>0.1130&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>2.90 mm</td><td>0.1142&Prime;</td></tr>
+               <tr><td>32</td><td>&nbsp;</td><td>0.1160&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.00 mm</td><td>0.1181&Prime;</td></tr>
+               <tr><td>31</td><td>&nbsp;</td><td>0.1200&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.10 mm</td><td>0.1220&Prime;</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>8</sub>&Prime;</td><td>&nbsp;</td><td>0.1250&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.20 mm</td><td>0.1260&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.25 mm</td><td>0.1280&Prime;</td></tr>
+               <tr><td>30</td><td>&nbsp;</td><td>0.1285&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.30 mm</td><td>0.1299&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.40 mm</td><td>0.1339&Prime;</td></tr>
+               <tr><td>29</td><td>&nbsp;</td><td>0.1360&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.50 mm</td><td>0.1378&Prime;</td></tr>
+               <tr><td>28</td><td>&nbsp;</td><td>0.1405&Prime;</td></tr>
+               <tr><td><sup>9</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.1406&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.60 mm</td><td>0.1417&Prime;</td></tr>
+               <tr><td>27</td><td>&nbsp;</td><td>0.1440&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.70 mm</td><td>0.1457&Prime;</td></tr>
+               <tr><td>26</td><td>&nbsp;</td><td>0.1470&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.75 mm</td><td>0.1476&Prime;</td></tr>
+               <tr><td>25</td><td>&nbsp;</td><td>0.1495&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.80 mm</td><td>0.1496&Prime;</td></tr>
+               <tr><td>24</td><td>&nbsp;</td><td>0.1520&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>3.90 mm</td><td>0.1535&Prime;</td></tr>
+               <tr><td>23</td><td>&nbsp;</td><td>0.1540&Prime;</td></tr>
+               <tr><td><sup>5</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.1562&Prime;</td></tr>
+               <tr><td>22</td><td>&nbsp;</td><td>0.1570&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>4.00 mm</td><td>0.1575&Prime;</td></tr>
+               <tr><td>21</td><td>&nbsp;</td><td>0.1590&Prime;</td></tr>
+               <tr><td>20</td><td>&nbsp;</td><td>0.1610&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>4.10 mm</td><td>0.1614&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>4.20 mm</td><td>0.1654&Prime;</td></tr>
+               <tr><td>19</td><td>&nbsp;</td><td>0.1660&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>4.25 mm</td><td>0.1673&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>4.30 mm</td><td>0.1693&Prime;</td></tr>
+               <tr><td>18</td><td>&nbsp;</td><td>0.1695&Prime;</td></tr>
+               <tr><td><sup>11</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.1719&Prime;</td></tr>
+               <tr><td>17</td><td>&nbsp;</td><td>0.1730&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>4.40 mm</td><td>0.1732&Prime;</td></tr>
+               <tr><td>16</td><td>&nbsp;</td><td>0.1770&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>4.50 mm</td><td>0.1772&Prime;</td></tr>
+               <tr><td>15</td><td>&nbsp;</td><td>0.1800&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>4.60 mm</td><td>0.1811&Prime;</td></tr>
+               <tr><td>14</td><td>&nbsp;</td><td>0.1820&Prime;</td></tr>
+               <tr><td>13</td><td>4.70 mm</td><td>0.1850&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>4.75 mm</td><td>0.1870&Prime;</td></tr>
+               <tr><td><sup>3</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.1875&Prime;</td></tr>
+               <tr><td>12</td><td>4.80 mm</td><td>0.1890&Prime;</td></tr>
+               <tr><td>11</td><td>&nbsp;</td><td>0.1910&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>4.90 mm</td><td>0.1929&Prime;</td></tr>
+               <tr><td>10</td><td>&nbsp;</td><td>0.1935&Prime;</td></tr>
+               <tr><td>9</td><td>&nbsp;</td><td>0.1960&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.00 mm</td><td>0.1969&Prime;</td></tr>
+               <tr><td>8</td><td>&nbsp;</td><td>0.1990&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.10 mm</td><td>0.2008&Prime;</td></tr>
+               <tr><td>7</td><td>&nbsp;</td><td>0.2010&Prime;</td></tr>
+               <tr><td><sup>13</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.2031&Prime;</td></tr>
+               <tr><td>6</td><td>&nbsp;</td><td>0.2040&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.20 mm</td><td>0.2047&Prime;</td></tr>
+               <tr><td>5</td><td>&nbsp;</td><td>0.2055&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.25 mm</td><td>0.2067&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.30 mm</td><td>0.2087&Prime;</td></tr>
+               <tr><td>4</td><td>&nbsp;</td><td>0.2090&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.40 mm</td><td>0.2126&Prime;</td></tr>
+               <tr><td>3</td><td>&nbsp;</td><td>0.2130&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.50 mm</td><td>0.2165&Prime;</td></tr>
+               <tr><td><sup>7</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.2188&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.60 mm</td><td>0.2205&Prime;</td></tr>
+               <tr><td>2</td><td>&nbsp;</td><td>0.2210&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.70 mm</td><td>0.2244&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.75 mm</td><td>0.2264&Prime;</td></tr>
+               <tr><td>1</td><td>&nbsp;</td><td>0.2280&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.80 mm</td><td>0.2283&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>5.90 mm</td><td>0.2323&Prime;</td></tr>
+               <tr><td>A</td><td>&nbsp;</td><td>0.2340&Prime;</td></tr>
+               <tr><td><sup>15</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.2344&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.00 mm</td><td>0.2362&Prime;</td></tr>
+               <tr><td>B</td><td>&nbsp;</td><td>0.2380&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.10 mm</td><td>0.2402&Prime;</td></tr>
+               <tr><td>C</td><td>&nbsp;</td><td>0.2420&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.20 mm</td><td>0.2441&Prime;</td></tr>
+               <tr><td>D</td><td>&nbsp;</td><td>0.2460&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.25 mm</td><td>0.2461&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.30 mm</td><td>0.2480&Prime;</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>4</sub>&Prime;</td><td>&nbsp;</td><td>0.2500&Prime;</td></tr>
+               <tr><td>E</td><td>&nbsp;</td><td>0.2500&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.40 mm</td><td>0.2520&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.50 mm</td><td>0.2559&Prime;</td></tr>
+               <tr><td>F</td><td>&nbsp;</td><td>0.2570&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.60 mm</td><td>0.2598&Prime;</td></tr>
+               <tr><td>G</td><td>&nbsp;</td><td>0.2610&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.70 mm</td><td>0.2638&Prime;</td></tr>
+               <tr><td><sup>17</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.2656&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.75 mm</td><td>0.2657&Prime;</td></tr>
+               <tr><td>H</td><td>&nbsp;</td><td>0.2660&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.80 mm</td><td>0.2677&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>6.90 mm</td><td>0.2717&Prime;</td></tr>
+               <tr><td>I</td><td>&nbsp;</td><td>0.2720&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.00 mm</td><td>0.2756&Prime;</td></tr>
+               <tr><td>J</td><td>&nbsp;</td><td>0.2770&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.10 mm</td><td>0.2795&Prime;</td></tr>
+               <tr><td>K</td><td>&nbsp;</td><td>0.2810&Prime;</td></tr>
+               <tr><td><sup>9</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.2812&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.20 mm</td><td>0.2835&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.25 mm</td><td>0.2854&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.30 mm</td><td>0.2874&Prime;</td></tr>
+               <tr><td>L</td><td>&nbsp;</td><td>0.2900&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.40 mm</td><td>0.2913&Prime;</td></tr>
+               <tr><td>M</td><td>&nbsp;</td><td>0.2950&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.50 mm</td><td>0.2953&Prime;</td></tr>
+               <tr><td><sup>19</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.2969&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.60 mm</td><td>0.2992&Prime;</td></tr>
+               <tr><td>N</td><td>&nbsp;</td><td>0.3020&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.70 mm</td><td>0.3031&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.75 mm</td><td>0.3051&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.80 mm</td><td>0.3071&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>7.90 mm</td><td>0.3110&Prime;</td></tr>
+               <tr><td><sup>5</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.3125&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.00 mm</td><td>0.3150&Prime;</td></tr>
+               <tr><td>O</td><td>&nbsp;</td><td>0.3160&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.10 mm</td><td>0.3189&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.20 mm</td><td>0.3228&Prime;</td></tr>
+               <tr><td>P</td><td>&nbsp;</td><td>0.3230&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.25 mm</td><td>0.3248&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.30 mm</td><td>0.3268&Prime;</td></tr>
+               <tr><td><sup>21</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.3281&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.40 mm</td><td>0.3307&Prime;</td></tr>
+               <tr><td>Q</td><td>&nbsp;</td><td>0.3320&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.50 mm</td><td>0.3346&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.60 mm</td><td>0.3386&Prime;</td></tr>
+               <tr><td>R</td><td>&nbsp;</td><td>0.3390&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.70 mm</td><td>0.3425&Prime;</td></tr>
+               <tr><td><sup>11</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.3438&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.75 mm</td><td>0.3445&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.80 mm</td><td>0.3465&Prime;</td></tr>
+               <tr><td>S</td><td>&nbsp;</td><td>0.3480&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>8.90 mm</td><td>0.3504&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.00 mm</td><td>0.3543&Prime;</td></tr>
+               <tr><td>T</td><td>&nbsp;</td><td>0.3580&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.10 mm</td><td>0.3583&Prime;</td></tr>
+               <tr><td><sup>23</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.3594&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.20 mm</td><td>0.3622&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.25 mm</td><td>0.3642&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.30 mm</td><td>0.3661&Prime;</td></tr>
+               <tr><td>U</td><td>&nbsp;</td><td>0.3680&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.40 mm</td><td>0.3701&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.50 mm</td><td>0.3740&Prime;</td></tr>
+               <tr><td><sup>3</sup>&frasl;<sub>8</sub>&Prime;</td><td>&nbsp;</td><td>0.3750&Prime;</td></tr>
+               <tr><td>V</td><td>&nbsp;</td><td>0.3770&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.60 mm</td><td>0.3780&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.70 mm</td><td>0.3819&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.75 mm</td><td>0.3839&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.80 mm</td><td>0.3858&Prime;</td></tr>
+               <tr><td>W</td><td>&nbsp;</td><td>0.3860&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>9.90 mm</td><td>0.3898&Prime;</td></tr>
+               <tr><td><sup>25</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.3906&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>10.00 mm</td><td>0.3937&Prime;</td></tr>
+               <tr><td>X</td><td>&nbsp;</td><td>0.3970&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>10.20 mm</td><td>0.4016&Prime;</td></tr>
+               <tr><td>Y</td><td>&nbsp;</td><td>0.4040&Prime;</td></tr>
+               <tr><td><sup>13</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.4062&Prime;</td></tr>
+               <tr><td>Z</td><td>&nbsp;</td><td>0.4130&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>10.50 mm</td><td>0.4134&Prime;</td></tr>
+               <tr><td><sup>27</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.4219&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>10.80 mm</td><td>0.4252&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>11.00 mm</td><td>0.4330&Prime;</td></tr>
+               <tr><td><sup>7</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.4375&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>11.20 mm</td><td>0.4409&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>11.50 mm</td><td>0.4528&Prime;</td></tr>
+               <tr><td><sup>29</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.4531&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>11.80 mm</td><td>0.4646&Prime;</td></tr>
+               <tr><td><sup>15</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.4688&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>12.00 mm</td><td>0.4724&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>12.20 mm</td><td>0.4803&Prime;</td></tr>
+               <tr><td><sup>31</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.4844&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>12.50 mm</td><td>0.4921&Prime;</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>2</sub>&Prime;</td><td>12.70 mm</td><td>0.5000&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>13.00 mm</td><td>0.5118&Prime;</td></tr>
+               <tr><td><sup>33</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.5156&Prime;</td></tr>
+               <tr><td><sup>17</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.5312&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>13.50 mm</td><td>0.5315&Prime;</td></tr>
+               <tr><td><sup>35</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.5469&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>14.00 mm</td><td>0.5512&Prime;</td></tr>
+               <tr><td><sup>9</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.5625&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>14.50 mm</td><td>0.5709&Prime;</td></tr>
+               <tr><td><sup>37</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.5781&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>14.75 mm</td><td>0.5807&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>15.00 mm</td><td>0.5906&Prime;</td></tr>
+               <tr><td><sup>19</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.5938&Prime;</td></tr>
+               <tr><td><sup>39</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.6094&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>15.50 mm</td><td>0.6102&Prime;</td></tr>
+               <tr><td><sup>5</sup>&frasl;<sub>8</sub>&Prime;</td><td>&nbsp;</td><td>0.6250&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>16.00 mm</td><td>0.6299&Prime;</td></tr>
+               <tr><td><sup>41</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.6406&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>16.50 mm</td><td>0.6496&Prime;</td></tr>
+               <tr><td><sup>21</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.6562&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>17.00 mm</td><td>0.6693&Prime;</td></tr>
+               <tr><td><sup>43</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.6719&Prime;</td></tr>
+               <tr><td><sup>11</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.6875&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>17.50 mm</td><td>0.6890&Prime;</td></tr>
+               <tr><td><sup>45</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.7031&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>18.00 mm</td><td>0.7087&Prime;</td></tr>
+               <tr><td><sup>23</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.7188&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>18.50 mm</td><td>0.7283&Prime;</td></tr>
+               <tr><td><sup>47</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.7344&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>19.00 mm</td><td>0.7480&Prime;</td></tr>
+               <tr><td><sup>3</sup>&frasl;<sub>4</sub>&Prime;</td><td>&nbsp;</td><td>0.7500&Prime;</td></tr>
+               <tr><td><sup>49</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.7656&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>19.50 mm</td><td>0.7677&Prime;</td></tr>
+               <tr><td><sup>25</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.7812&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>20.00 mm</td><td>0.7874&Prime;</td></tr>
+               <tr><td><sup>51</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.7969&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>20.50 mm</td><td>0.8071&Prime;</td></tr>
+               <tr><td><sup>13</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.8125&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>21.00 mm</td><td>0.8268&Prime;</td></tr>
+               <tr><td><sup>53</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.8281&Prime;</td></tr>
+               <tr><td><sup>27</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.8438&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>21.50 mm</td><td>0.8465&Prime;</td></tr>
+               <tr><td><sup>55</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.8594&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>22.00 mm</td><td>0.8661&Prime;</td></tr>
+               <tr><td><sup>7</sup>&frasl;<sub>8</sub>&Prime;</td><td>&nbsp;</td><td>0.8750&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>22.50 mm</td><td>0.8858&Prime;</td></tr>
+               <tr><td><sup>57</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.8906&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>23.00 mm</td><td>0.9055&Prime;</td></tr>
+               <tr><td><sup>29</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.9062&Prime;</td></tr>
+               <tr><td><sup>59</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.9219&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>23.50 mm</td><td>0.9252&Prime;</td></tr>
+               <tr><td><sup>15</sup>&frasl;<sub>16</sub>&Prime;</td><td>&nbsp;</td><td>0.9375&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>24.00 mm</td><td>0.9449&Prime;</td></tr>
+               <tr><td><sup>61</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.9531&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>24.50 mm</td><td>0.9646&Prime;</td></tr>
+               <tr><td><sup>31</sup>&frasl;<sub>32</sub>&Prime;</td><td>&nbsp;</td><td>0.9688&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>25.00 mm</td><td>0.9843&Prime;</td></tr>
+               <tr><td><sup>63</sup>&frasl;<sub>64</sub>&Prime;</td><td>&nbsp;</td><td>0.9844&Prime;</td></tr>
+               <tr><td>1</td><td>&nbsp;</td><td>1.0000&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>25.50 mm</td><td>1.0039&Prime;</td></tr>
+               <tr><td>1 1/64</td><td>&nbsp;</td><td>1.0156&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>26.00 mm</td><td>1.0236&Prime;</td></tr>
+               <tr><td>1 1/32</td><td>&nbsp;</td><td>1.0312&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>26.50 mm</td><td>1.0443&Prime;</td></tr>
+               <tr><td>1 3/64</td><td>&nbsp;</td><td>1.0469&Prime;</td></tr>
+               <tr><td>1 1/16</td><td>&nbsp;</td><td>1.0625&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>27.00 mm</td><td>1.0630&Prime;</td></tr>
+               <tr><td>1 5/64</td><td>&nbsp;</td><td>1.0781&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>27.50 mm</td><td>1.0827&Prime;</td></tr>
+               <tr><td>1 3/32</td><td>&nbsp;</td><td>1.0938&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>28.00 mm</td><td>1.1024&Prime;</td></tr>
+               <tr><td>1 7/64</td><td>&nbsp;</td><td>1.1094&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>28.50 mm</td><td>1.1220&Prime;</td></tr>
+               <tr><td>1 1/8</td><td>&nbsp;</td><td>1.1250&Prime;</td></tr>
+               <tr><td>1 9/64</td><td>&nbsp;</td><td>1.1406&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>29.00 mm</td><td>1.1417&Prime;</td></tr>
+               <tr><td>1 5/32</td><td>&nbsp;</td><td>1.1562&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>29.50 mm</td><td>1.1614&Prime;</td></tr>
+               <tr><td>1 11/64</td><td>&nbsp;</td><td>1.1719&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>30.00 mm</td><td>1.1811&Prime;</td></tr>
+               <tr><td>1 3/16</td><td>&nbsp;</td><td>1.1875&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>30.50 mm</td><td>1.2008&Prime;</td></tr>
+               <tr><td>1 13/64</td><td>&nbsp;</td><td>1.2031&Prime;</td></tr>
+               <tr><td>1 7/32</td><td>&nbsp;</td><td>1.2188&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>31.00 mm</td><td>1.2204&Prime;</td></tr>
+               <tr><td>1 15/64</td><td>&nbsp;</td><td>1.2344&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>31.50 mm</td><td>1.2402&Prime;</td></tr>
+               <tr><td>1 1/4</td><td>&nbsp;</td><td>1.2500&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>32.00 mm</td><td>1.2598&Prime;</td></tr>
+               <tr><td>1 17/64</td><td>&nbsp;</td><td>1.2656&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>32.50 mm</td><td>1.2795&Prime;</td></tr>
+               <tr><td>1 9/32</td><td>&nbsp;</td><td>1.2812&Prime;</td></tr>
+               <tr><td>1 19/64</td><td>&nbsp;</td><td>1.2969&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>33.00 mm</td><td>1.2992&Prime;</td></tr>
+               <tr><td>1 5/16</td><td>&nbsp;</td><td>1.3125&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>33.50 mm</td><td>1.3189&Prime;</td></tr>
+               <tr><td>1 21/64</td><td>&nbsp;</td><td>1.3281&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>34.00 mm</td><td>1.3386&Prime;</td></tr>
+               <tr><td>1 11/32</td><td>&nbsp;</td><td>1.3438&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>34.50 mm</td><td>1.3583&Prime;</td></tr>
+               <tr><td>1 23/64</td><td>&nbsp;</td><td>1.3594&Prime;</td></tr>
+               <tr><td>1 3/8</td><td>&nbsp;</td><td>1.3750&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>35.00 mm</td><td>1.3780&Prime;</td></tr>
+               <tr><td>1 25/64</td><td>&nbsp;</td><td>1.3906&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>35.50 mm</td><td>1.3976&Prime;</td></tr>
+               <tr><td>1 13/32</td><td>&nbsp;</td><td>1.4062&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>36.00 mm</td><td>1.4173&Prime;</td></tr>
+               <tr><td>1 27/64</td><td>&nbsp;</td><td>1.4219&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>36.50 mm</td><td>1.4370&Prime;</td></tr>
+               <tr><td>1 7/16</td><td>&nbsp;</td><td>1.4375&Prime;</td></tr>
+               <tr><td>1 29/64</td><td>&nbsp;</td><td>1.4531&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>37.00 mm</td><td>1.4567&Prime;</td></tr>
+               <tr><td>1 15/32</td><td>&nbsp;</td><td>1.4688&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>37.50 mm</td><td>1.4764&Prime;</td></tr>
+               <tr><td>1 31/64</td><td>&nbsp;</td><td>1.4844&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>38.00 mm</td><td>1.4961&Prime;</td></tr>
+               <tr><td>1 1/2</td><td>&nbsp;</td><td>1.5000&Prime;</td></tr>
+               <tr><td>1 33/64</td><td>&nbsp;</td><td>1.5165&Prime;</td></tr>
+               <tr><td>1 17/32</td><td>&nbsp;</td><td>1.5312&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>39.00 mm</td><td>1.5354&Prime;</td></tr>
+               <tr><td>1 35/64</td><td>&nbsp;</td><td>1.5469&Prime;</td></tr>
+               <tr><td>1 9/16</td><td>&nbsp;</td><td>1.5625&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>40.00 mm</td><td>1.5748&Prime;</td></tr>
+               <tr><td>1 37/64</td><td>&nbsp;</td><td>1.5781&Prime;</td></tr>
+               <tr><td>1 19/32</td><td>&nbsp;</td><td>1.5938&Prime;</td></tr>
+               <tr><td>1 39/64</td><td>&nbsp;</td><td>1.6094&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>41.00 mm</td><td>1.6142&Prime;</td></tr>
+               <tr><td>1 5/8</td><td>&nbsp;</td><td>1.6250&Prime;</td></tr>
+               <tr><td>1 41/64</td><td>&nbsp;</td><td>1.6406&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>42.00 mm</td><td>1.6535&Prime;</td></tr>
+               <tr><td>1 21/32</td><td>&nbsp;</td><td>1.6562&Prime;</td></tr>
+               <tr><td>1 43/64</td><td>&nbsp;</td><td>1.6719&Prime;</td></tr>
+               <tr><td>1 11/16</td><td>&nbsp;</td><td>1.6875&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>43.00 mm</td><td>1.6929&Prime;</td></tr>
+               <tr><td>1 45/64</td><td>&nbsp;</td><td>1.7031&Prime;</td></tr>
+               <tr><td>1 23/32</td><td>&nbsp;</td><td>1.7188&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>44.00 mm</td><td>1.7323&Prime;</td></tr>
+               <tr><td>1 47/64</td><td>&nbsp;</td><td>1.7344&Prime;</td></tr>
+               <tr><td>1 3/4</td><td>&nbsp;</td><td>1.7500&Prime;</td></tr>
+               <tr><td>1 49/64</td><td>&nbsp;</td><td>1.7656&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>45.00 mm</td><td>1.7717&Prime;</td></tr>
+               <tr><td>1 25/32</td><td>&nbsp;</td><td>1.7812&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>46.00 mm</td><td>1.8110&Prime;</td></tr>
+               <tr><td>1 13/16</td><td>&nbsp;</td><td>1.8125&Prime;</td></tr>
+               <tr><td>1 27/32</td><td>&nbsp;</td><td>1.8438&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>47.00 mm</td><td>1.8504&Prime;</td></tr>
+               <tr><td>1 7/8</td><td>&nbsp;</td><td>1.8750&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>48.00 mm</td><td>1.8898&Prime;</td></tr>
+               <tr><td>1 29/32</td><td>&nbsp;</td><td>1.9062&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>49.00 mm</td><td>1.9291&Prime;</td></tr>
+               <tr><td>1 15/16</td><td>&nbsp;</td><td>1.9375&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>50.00 mm</td><td>1.9625&Prime;</td></tr>
+               <tr><td>1 31/32</td><td>&nbsp;</td><td>1.9688&Prime;</td></tr>
+               <tr><td>2</td><td>&nbsp;</td><td>2.0000&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>51.00 mm</td><td>2.0079&Prime;</td></tr>
+               <tr><td>2 1/32</td><td>&nbsp;</td><td>2.0312&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>52.00 mm</td><td>2.0472&Prime;</td></tr>
+               <tr><td>2 1/16</td><td>&nbsp;</td><td>2.0625&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>53.00 mm</td><td>2.0866&Prime;</td></tr>
+               <tr><td>2 3/32</td><td>&nbsp;</td><td>2.0938&Prime;</td></tr>
+               <tr><td>2 1/8</td><td>&nbsp;</td><td>2.1250&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>54.00 mm</td><td>2.1260&Prime;</td></tr>
+               <tr><td>2 5/32</td><td>&nbsp;</td><td>2.1562&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>55.00 mm</td><td>2.1654&Prime;</td></tr>
+               <tr><td>2 3/16</td><td>&nbsp;</td><td>2.1875&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>56.00 mm</td><td>2.2000&Prime;</td></tr>
+               <tr><td>2 7/32</td><td>&nbsp;</td><td>2.2188&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>57.00 mm</td><td>2.2441&Prime;</td></tr>
+               <tr><td>2 1/4</td><td>&nbsp;</td><td>2.2500&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>58.00 mm</td><td>2.2835&Prime;</td></tr>
+               <tr><td>2 5/16</td><td>&nbsp;</td><td>2.3125&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>59.00 mm</td><td>2.3228&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>60.00 mm</td><td>2.3622&Prime;</td></tr>
+               <tr><td>2 3/8</td><td>&nbsp;</td><td>2.3750&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>61.00 mm</td><td>2.4016&Prime;</td></tr>
+               <tr><td>2 7/16</td><td>&nbsp;</td><td>2.4375&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>62.00 mm</td><td>2.4409&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>63.00 mm</td><td>2.4803&Prime;</td></tr>
+               <tr><td>2 1/2</td><td>&nbsp;</td><td>2.5000&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>64.00 mm</td><td>2.5197&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>65.00 mm</td><td>2.5591&Prime;</td></tr>
+               <tr><td>2 9/16</td><td>&nbsp;</td><td>2.5625&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>66.00 mm</td><td>2.5984&Prime;</td></tr>
+               <tr><td>2 5/8</td><td>&nbsp;</td><td>2.6250&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>67.00 mm</td><td>2.6378&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>68.00 mm</td><td>2.6772&Prime;</td></tr>
+               <tr><td>2 11/16</td><td>&nbsp;</td><td>2.6875&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>69.00 mm</td><td>2.7165&Prime;</td></tr>
+               <tr><td>2 3/4</td><td>&nbsp;</td><td>2.7500&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>70.00 mm</td><td>2.7559&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>71.00 mm</td><td>2.7953&Prime;</td></tr>
+               <tr><td>2 13/16</td><td>&nbsp;</td><td>2.8125&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>72.00 mm</td><td>2.8346&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>73.00 mm</td><td>2.8740&Prime;</td></tr>
+               <tr><td>2 7/8</td><td>&nbsp;</td><td>2.8750&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>74.00 mm</td><td>2.9134&Prime;</td></tr>
+               <tr><td>2 15/16</td><td>&nbsp;</td><td>2.9375&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>75.00 mm</td><td>2.9528&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>76.00 mm</td><td>2.9921&Prime;</td></tr>
+               <tr><td>3</td><td>&nbsp;</td><td>3.0000&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>77.00 mm</td><td>3.0315&Prime;</td></tr>
+               <tr><td>&nbsp;</td><td>78.00 mm</td><td>3.0709&Prime;</td></tr>
+               <tr><td>3 1/8</td><td>&nbsp;</td><td>3.1250&Prime;</td></tr>
+               <tr><td>3 1/4</td><td>&nbsp;</td><td>3.2500&Prime;</td></tr>
+               <tr><td>3 1/2</td><td>&nbsp;</td><td>3.5000&Prime;</td></tr>
+            </table>
+         </div>
+         <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+               <ul>
+                  <li><a href="#boltChart" class="boltChartSelector">Bolt<br>Chart</a></li>
+                  <li><a href="#metricBoltChart" class="metricBoltChartSelector">Metric Bolt<br>Chart</a></li>
+                  <li><a href="#drillChart" class="drillChartSelector ui-btn-active"><!-- <img src="img/drill_chart_icon.svg" /><br /> -->Drill<br>Chart</a></li>
+                  <li><a href="#fractionalChart" class="fractionChartSelector">Fractional<br>Chart<!-- <img src="img/fraction_chart_icon.png" /> --></a></li>
+               </ul>
+            </div>
+         </div>
       </div>
-      <div id="fractionChart" class="hidden">
-         <table>
-            <tr><th>fraction</th><th>inch</th><th>mm</th></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.015625&Prime;</td><td>0.396875 mm</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.03125&Prime;</td><td>0.79375 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.039370079&Prime;</td><td>1 mm</td></tr>
-            <tr><td><sup>3</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.046875&Prime;</td><td>1.190625 mm</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.0625&Prime;</td><td>1.5875 mm</td></tr>
-            <tr><td><sup>5</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.078125&Prime;</td><td>1.984375 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.078740157&Prime;</td><td>2 mm</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>12</sub>&Prime;</td><td>0.0833&Prime;</td><td>2.1166 mm</td></tr>
-            <tr><td><sup>3</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.09375&Prime;</td><td>2.38125 mm</td></tr>
-            <tr><td><sup>7</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.109375&Prime;</td><td>2.778125 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.118110236&Prime;</td><td>3 mm</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>8</sub>&Prime;</td><td>0.125&Prime;</td><td>3.175 mm</td></tr>
-            <tr><td><sup>9</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.140625&Prime;</td><td>3.571875 mm</td></tr>
-            <tr><td><sup>5</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.15625&Prime;</td><td>3.96875 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.157480315&Prime;</td><td>4 mm</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>6</sub>&Prime;</td><td>0.166&Prime;</td><td>4.233 mm</td></tr>
-            <tr><td><sup>11</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.171875&Prime;</td><td>4.365625 mm</td></tr>
-            <tr><td><sup>3</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.1875&Prime;</td><td>4.7625 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.196850394&Prime;</td><td>5 mm</td></tr>
-            <tr><td><sup>13</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.203125&Prime;</td><td>5.159375 mm</td></tr>
-            <tr><td><sup>7</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.21875&Prime;</td><td>5.55625 mm</td></tr>
-            <tr><td><sup>15</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.234375&Prime;</td><td>5.953125 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.236220472&Prime;</td><td>6 mm</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>4</sub>&Prime;</td><td>0.25&Prime;</td><td>6.35 mm</td></tr>
-            <tr><td><sup>17</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.265625&Prime;</td><td>6.746875 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.275590551&Prime;</td><td>7 mm</td></tr>
-            <tr><td><sup>9</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.28125&Prime;</td><td>7.14375 mm</td></tr>
-            <tr><td><sup>19</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.296875&Prime;</td><td>7.540625 mm</td></tr>
-            <tr><td><sup>5</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.3125&Prime;</td><td>7.9375 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.31496063&Prime;</td><td>8 mm</td></tr>
-            <tr><td><sup>21</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.328125&Prime;</td><td>8.334375 mm</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>3</sub>&Prime;</td><td>0.33&Prime;</td><td>8.466 mm</td></tr>
-            <tr><td><sup>11</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.34375&Prime;</td><td>8.73125 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.354330709&Prime;</td><td>9 mm</td></tr>
-            <tr><td><sup>23</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.359375&Prime;</td><td>9.128125 mm</td></tr>
-            <tr><td><sup>3</sup>&frasl;<sub>8</sub>&Prime;</td><td>0.375&Prime;</td><td>9.525 mm</td></tr>
-            <tr><td><sup>25</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.390625&Prime;</td><td>9.921875 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.393700787&Prime;</td><td>10 mm</td></tr>
-            <tr><td><sup>13</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.40625&Prime;</td><td>10.31875 mm</td></tr>
-            <tr><td><sup>5</sup>&frasl;<sub>12</sub>&Prime;</td><td>0.4166&Prime;</td><td>10.5833 mm</td></tr>
-            <tr><td><sup>27</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.421875&Prime;</td><td>10.715625 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.433070866&Prime;</td><td>11 mm</td></tr>
-            <tr><td><sup>7</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.4375&Prime;</td><td>11.1125 mm</td></tr>
-            <tr><td><sup>29</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.453125&Prime;</td><td>11.509375 mm</td></tr>
-            <tr><td><sup>15</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.46875&Prime;</td><td>11.90625 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.472440945&Prime;</td><td>12 mm</td></tr>
-            <tr><td><sup>31</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.484375&Prime;</td><td>12.303125 mm</td></tr>
-            <tr><td><sup>1</sup>&frasl;<sub>2</sub>&Prime;</td><td>0.5&Prime;</td><td>12.7 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.511811024&Prime;</td><td>13 mm</td></tr>
-            <tr><td><sup>33</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.515625&Prime;</td><td>13.096875 mm</td></tr>
-            <tr><td><sup>17</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.53125&Prime;</td><td>13.49375 mm</td></tr>
-            <tr><td><sup>35</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.546875&Prime;</td><td>13.890625 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.551181102&Prime;</td><td>14 mm</td></tr>
-            <tr><td><sup>9</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.5625&Prime;</td><td>14.2875 mm</td></tr>
-            <tr><td><sup>37</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.578125&Prime;</td><td>14.684375 mm</td></tr>
-            <tr><td><sup>7</sup>&frasl;<sub>12</sub>&Prime;</td><td>0.5833&Prime;</td><td>14.8166 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.590551181&Prime;</td><td>15 mm</td></tr>
-            <tr><td><sup>19</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.59375&Prime;</td><td>15.08125 mm</td></tr>
-            <tr><td><sup>39</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.609375&Prime;</td><td>15.478125 mm</td></tr>
-            <tr><td><sup>5</sup>&frasl;<sub>8</sub>&Prime;</td><td>0.625&Prime;</td><td>15.875 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.62992126&Prime;</td><td>16 mm</td></tr>
-            <tr><td><sup>41</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.640625&Prime;</td><td>16.271875 mm</td></tr>
-            <tr><td><sup>21</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.65625&Prime;</td><td>16.66875 mm</td></tr>
-            <tr><td><sup>2</sup>&frasl;<sub>3</sub>&Prime;</td><td>0.66&Prime;</td><td>16.933 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.669291339&Prime;</td><td>17 mm</td></tr>
-            <tr><td><sup>43</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.671875&Prime;</td><td>17.065625 mm</td></tr>
-            <tr><td><sup>11</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.6875&Prime;</td><td>17.4625 mm</td></tr>
-            <tr><td><sup>45</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.703125&Prime;</td><td>17.859375 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.708661417&Prime;</td><td>18 mm</td></tr>
-            <tr><td><sup>23</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.71875&Prime;</td><td>18.25625 mm</td></tr>
-            <tr><td><sup>47</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.734375&Prime;</td><td>18.653125 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.748031496&Prime;</td><td>19 mm</td></tr>
-            <tr><td><sup>3</sup>&frasl;<sub>4</sub>&Prime;</td><td>0.75&Prime;</td><td>19.05 mm</td></tr>
-            <tr><td><sup>49</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.765625&Prime;</td><td>19.446875 mm</td></tr>
-            <tr><td><sup>25</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.78125&Prime;</td><td>19.84375 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.787401575&Prime;</td><td>20 mm</td></tr>
-            <tr><td><sup>51</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.796875&Prime;</td><td>20.240625 mm</td></tr>
-            <tr><td><sup>13</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.8125&Prime;</td><td>20.6375 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.826771654&Prime;</td><td>21 mm</td></tr>
-            <tr><td><sup>53</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.828125&Prime;</td><td>21.034375 mm</td></tr>
-            <tr><td><sup>27</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.84375&Prime;</td><td>21.43125 mm</td></tr>
-            <tr><td><sup>55</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.859375&Prime;</td><td>21.828125 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.866141732&Prime;</td><td>22 mm</td></tr>
-            <tr><td><sup>7</sup>&frasl;<sub>8</sub>&Prime;</td><td>0.875&Prime;</td><td>22.225 mm</td></tr>
-            <tr><td><sup>57</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.890625&Prime;</td><td>22.621875 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.905511811&Prime;</td><td>23 mm</td></tr>
-            <tr><td><sup>29</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.90625&Prime;</td><td>23.01875 mm</td></tr>
-            <tr><td><sup>11</sup>&frasl;<sub>12</sub>&Prime;</td><td>0.9166&Prime;</td><td>23.2833 mm</td></tr>
-            <tr><td><sup>59</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.921875&Prime;</td><td>23.415625 mm</td></tr>
-            <tr><td><sup>15</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.9375&Prime;</td><td>23.8125 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.94488189&Prime;</td><td>24 mm</td></tr>
-            <tr><td><sup>61</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.953125&Prime;</td><td>24.209375 mm</td></tr>
-            <tr><td><sup>31</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.96875&Prime;</td><td>24.60625 mm</td></tr>
-            <tr><td>&nbsp;</td><td>0.984251969&Prime;</td><td>25 mm</td></tr>
-            <tr><td><sup>63</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.984375&Prime;</td><td>25.003125 mm</td></tr>
-            <tr><td>1</td><td>1&Prime;</td><td>25.4 mm</td></tr>
-         </table>
+      <div id="fractionalChart" class="content-panel fraction-chart hidden" data-role="page">
+         <div role="main" class="ui-content">
+            <table>
+               <tr><th>fraction</th><th>inch</th><th>mm</th></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.015625&Prime;</td><td>0.396875 mm</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.03125&Prime;</td><td>0.79375 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.039370079&Prime;</td><td>1 mm</td></tr>
+               <tr><td><sup>3</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.046875&Prime;</td><td>1.190625 mm</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.0625&Prime;</td><td>1.5875 mm</td></tr>
+               <tr><td><sup>5</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.078125&Prime;</td><td>1.984375 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.078740157&Prime;</td><td>2 mm</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>12</sub>&Prime;</td><td>0.0833&Prime;</td><td>2.1166 mm</td></tr>
+               <tr><td><sup>3</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.09375&Prime;</td><td>2.38125 mm</td></tr>
+               <tr><td><sup>7</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.109375&Prime;</td><td>2.778125 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.118110236&Prime;</td><td>3 mm</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>8</sub>&Prime;</td><td>0.125&Prime;</td><td>3.175 mm</td></tr>
+               <tr><td><sup>9</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.140625&Prime;</td><td>3.571875 mm</td></tr>
+               <tr><td><sup>5</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.15625&Prime;</td><td>3.96875 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.157480315&Prime;</td><td>4 mm</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>6</sub>&Prime;</td><td>0.166&Prime;</td><td>4.233 mm</td></tr>
+               <tr><td><sup>11</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.171875&Prime;</td><td>4.365625 mm</td></tr>
+               <tr><td><sup>3</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.1875&Prime;</td><td>4.7625 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.196850394&Prime;</td><td>5 mm</td></tr>
+               <tr><td><sup>13</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.203125&Prime;</td><td>5.159375 mm</td></tr>
+               <tr><td><sup>7</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.21875&Prime;</td><td>5.55625 mm</td></tr>
+               <tr><td><sup>15</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.234375&Prime;</td><td>5.953125 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.236220472&Prime;</td><td>6 mm</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>4</sub>&Prime;</td><td>0.25&Prime;</td><td>6.35 mm</td></tr>
+               <tr><td><sup>17</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.265625&Prime;</td><td>6.746875 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.275590551&Prime;</td><td>7 mm</td></tr>
+               <tr><td><sup>9</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.28125&Prime;</td><td>7.14375 mm</td></tr>
+               <tr><td><sup>19</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.296875&Prime;</td><td>7.540625 mm</td></tr>
+               <tr><td><sup>5</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.3125&Prime;</td><td>7.9375 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.31496063&Prime;</td><td>8 mm</td></tr>
+               <tr><td><sup>21</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.328125&Prime;</td><td>8.334375 mm</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>3</sub>&Prime;</td><td>0.33&Prime;</td><td>8.466 mm</td></tr>
+               <tr><td><sup>11</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.34375&Prime;</td><td>8.73125 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.354330709&Prime;</td><td>9 mm</td></tr>
+               <tr><td><sup>23</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.359375&Prime;</td><td>9.128125 mm</td></tr>
+               <tr><td><sup>3</sup>&frasl;<sub>8</sub>&Prime;</td><td>0.375&Prime;</td><td>9.525 mm</td></tr>
+               <tr><td><sup>25</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.390625&Prime;</td><td>9.921875 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.393700787&Prime;</td><td>10 mm</td></tr>
+               <tr><td><sup>13</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.40625&Prime;</td><td>10.31875 mm</td></tr>
+               <tr><td><sup>5</sup>&frasl;<sub>12</sub>&Prime;</td><td>0.4166&Prime;</td><td>10.5833 mm</td></tr>
+               <tr><td><sup>27</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.421875&Prime;</td><td>10.715625 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.433070866&Prime;</td><td>11 mm</td></tr>
+               <tr><td><sup>7</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.4375&Prime;</td><td>11.1125 mm</td></tr>
+               <tr><td><sup>29</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.453125&Prime;</td><td>11.509375 mm</td></tr>
+               <tr><td><sup>15</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.46875&Prime;</td><td>11.90625 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.472440945&Prime;</td><td>12 mm</td></tr>
+               <tr><td><sup>31</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.484375&Prime;</td><td>12.303125 mm</td></tr>
+               <tr><td><sup>1</sup>&frasl;<sub>2</sub>&Prime;</td><td>0.5&Prime;</td><td>12.7 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.511811024&Prime;</td><td>13 mm</td></tr>
+               <tr><td><sup>33</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.515625&Prime;</td><td>13.096875 mm</td></tr>
+               <tr><td><sup>17</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.53125&Prime;</td><td>13.49375 mm</td></tr>
+               <tr><td><sup>35</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.546875&Prime;</td><td>13.890625 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.551181102&Prime;</td><td>14 mm</td></tr>
+               <tr><td><sup>9</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.5625&Prime;</td><td>14.2875 mm</td></tr>
+               <tr><td><sup>37</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.578125&Prime;</td><td>14.684375 mm</td></tr>
+               <tr><td><sup>7</sup>&frasl;<sub>12</sub>&Prime;</td><td>0.5833&Prime;</td><td>14.8166 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.590551181&Prime;</td><td>15 mm</td></tr>
+               <tr><td><sup>19</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.59375&Prime;</td><td>15.08125 mm</td></tr>
+               <tr><td><sup>39</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.609375&Prime;</td><td>15.478125 mm</td></tr>
+               <tr><td><sup>5</sup>&frasl;<sub>8</sub>&Prime;</td><td>0.625&Prime;</td><td>15.875 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.62992126&Prime;</td><td>16 mm</td></tr>
+               <tr><td><sup>41</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.640625&Prime;</td><td>16.271875 mm</td></tr>
+               <tr><td><sup>21</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.65625&Prime;</td><td>16.66875 mm</td></tr>
+               <tr><td><sup>2</sup>&frasl;<sub>3</sub>&Prime;</td><td>0.66&Prime;</td><td>16.933 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.669291339&Prime;</td><td>17 mm</td></tr>
+               <tr><td><sup>43</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.671875&Prime;</td><td>17.065625 mm</td></tr>
+               <tr><td><sup>11</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.6875&Prime;</td><td>17.4625 mm</td></tr>
+               <tr><td><sup>45</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.703125&Prime;</td><td>17.859375 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.708661417&Prime;</td><td>18 mm</td></tr>
+               <tr><td><sup>23</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.71875&Prime;</td><td>18.25625 mm</td></tr>
+               <tr><td><sup>47</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.734375&Prime;</td><td>18.653125 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.748031496&Prime;</td><td>19 mm</td></tr>
+               <tr><td><sup>3</sup>&frasl;<sub>4</sub>&Prime;</td><td>0.75&Prime;</td><td>19.05 mm</td></tr>
+               <tr><td><sup>49</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.765625&Prime;</td><td>19.446875 mm</td></tr>
+               <tr><td><sup>25</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.78125&Prime;</td><td>19.84375 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.787401575&Prime;</td><td>20 mm</td></tr>
+               <tr><td><sup>51</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.796875&Prime;</td><td>20.240625 mm</td></tr>
+               <tr><td><sup>13</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.8125&Prime;</td><td>20.6375 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.826771654&Prime;</td><td>21 mm</td></tr>
+               <tr><td><sup>53</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.828125&Prime;</td><td>21.034375 mm</td></tr>
+               <tr><td><sup>27</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.84375&Prime;</td><td>21.43125 mm</td></tr>
+               <tr><td><sup>55</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.859375&Prime;</td><td>21.828125 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.866141732&Prime;</td><td>22 mm</td></tr>
+               <tr><td><sup>7</sup>&frasl;<sub>8</sub>&Prime;</td><td>0.875&Prime;</td><td>22.225 mm</td></tr>
+               <tr><td><sup>57</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.890625&Prime;</td><td>22.621875 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.905511811&Prime;</td><td>23 mm</td></tr>
+               <tr><td><sup>29</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.90625&Prime;</td><td>23.01875 mm</td></tr>
+               <tr><td><sup>11</sup>&frasl;<sub>12</sub>&Prime;</td><td>0.9166&Prime;</td><td>23.2833 mm</td></tr>
+               <tr><td><sup>59</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.921875&Prime;</td><td>23.415625 mm</td></tr>
+               <tr><td><sup>15</sup>&frasl;<sub>16</sub>&Prime;</td><td>0.9375&Prime;</td><td>23.8125 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.94488189&Prime;</td><td>24 mm</td></tr>
+               <tr><td><sup>61</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.953125&Prime;</td><td>24.209375 mm</td></tr>
+               <tr><td><sup>31</sup>&frasl;<sub>32</sub>&Prime;</td><td>0.96875&Prime;</td><td>24.60625 mm</td></tr>
+               <tr><td>&nbsp;</td><td>0.984251969&Prime;</td><td>25 mm</td></tr>
+               <tr><td><sup>63</sup>&frasl;<sub>64</sub>&Prime;</td><td>0.984375&Prime;</td><td>25.003125 mm</td></tr>
+               <tr><td>1</td><td>1&Prime;</td><td>25.4 mm</td></tr>
+            </table>
+         </div>
+         <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+               <ul>
+                  <li><a href="#boltChart" class="boltChartSelector">Bolt Chart</a></li>
+                  <li><a href="#metricBoltChart" class="metricBoltChartSelector">Metric Bolt Chart</a></li>
+                  <li><a href="#drillChart" class="drillChartSelector"><!-- <img src="img/drill_chart_icon.svg" /><br /> -->Drill Chart</a></li>
+                  <li><a href="#fractionalChart" class="selected fractionChartSelector ui-btn-active">Fractional Chart<!-- <img src="img/fraction_chart_icon.png" /> --></a></li>
+               </ul>
+            </div>
+         </div>
       </div>
-      <div id="mainSelector">
-         <button class="panelSelector selected" id="boltChartSelector">Bolt<br />Chart</button>
-         <button class="panelSelector" id="drillChartSelector"><img src="img/drill_chart_icon.svg" /><br />Drill Chart</button>
-         <button class="panelSelector" id="fractionChartSelector">Fractional<br />Chart<img src="img/fraction_chart_icon.png" /></button>
-      </div>
+      
 
 
 
       <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+      <script src="js/vendor/jquery-2.2.4.min.js"></script>
+      <script src="js/vendor/jquery.mobile-1.4.5.min.js"></script>
+      <script src="js/vendor/hammer-1.0.5.js"></script>
       <script src="js/main.min.js"></script>
-
-      <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-      <!--        <script>
-         window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-         ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+      <script>
+         $(function() {
+            $('.slider').pagesSliderTouch();
+         });
       </script>
-      <script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
    </body>
 </html>
