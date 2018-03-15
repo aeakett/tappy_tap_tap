@@ -3,7 +3,7 @@ $(document).ready(function() {
       $('#boltSize').append('<option value="'+index+'">'+value.size+'</option>');
    });
 
-$('.ui-grid-a').enhanceWithin();
+   $('.ui-grid-a').enhanceWithin();
 
    var boltInit=false;
    while (!boltInit) {
@@ -31,7 +31,38 @@ $('.ui-grid-a').enhanceWithin();
    $('#mBoltSize').change(function(){mBoltSizeChange();});
    $('#mBoltTPI').change(function(){mBoltTPIChange();});
 
+
+   $('#class').change(function(){classChange();});
+   $('#grade').change(function(){gradeChange();});
 });
+
+function classChange(){
+   switch($('#class').val()) {
+      case "4.8":
+         $('#classImage').attr('src', 'img/class4.8.svg');
+         break;
+      case "8.8":
+         $('#classImage').attr('src', 'img/class8.8.svg');
+         break;
+      case "10.9":
+         $('#classImage').attr('src', 'img/class10.9.svg');
+         break;
+   }
+}
+
+function gradeChange(){
+   switch($('#grade').val()) {
+      case "2":
+         $('#gradeImage').attr('src', 'img/grade2.svg');
+         break;
+      case "5":
+         $('#gradeImage').attr('src', 'img/grade5.svg');
+         break;
+      case "8":
+         $('#gradeImage').attr('src', 'img/grade8.svg');
+         break;
+   }
+}
 
 function boltSizeChange(){
    $('#boltTPI').empty();
