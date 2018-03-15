@@ -3,6 +3,8 @@ $(document).ready(function() {
       $('#boltSize').append('<option value="'+index+'">'+value.size+'</option>');
    });
 
+$('.ui-grid-a').enhanceWithin();
+
    var boltInit=false;
    while (!boltInit) {
       if ($('#boltTPI').parent().parent().hasClass('ui-select')) {console.log('Doing bolt post-init');
@@ -18,16 +20,17 @@ $(document).ready(function() {
       $('#mBoltSize').append('<option value="'+index+'">M'+value.size+'</option>');
    });
 
-   /* var mBoltInit=false;
+   var mBoltInit=false;
    while (!mBoltInit) {
       if ($('#mBoltTPI').parent().parent().hasClass('ui-select')) {console.log('Doing mBolt post-init');
          mBoltSizeChange();
          mBoltInit=true;
       } else {console.log('mChecking...');}
-   }*/
+   }
 
    $('#mBoltSize').change(function(){mBoltSizeChange();});
    $('#mBoltTPI').change(function(){mBoltTPIChange();});
+
 });
 
 function boltSizeChange(){
