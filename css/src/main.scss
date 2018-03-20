@@ -70,3 +70,11 @@ body {
 }
 
 
+.swiper-button-next,
+.swiper-button-prev {
+  background-image: url("../img/pagerArrow.svg");
+}
+
+.swiper-button-next {
+  transform: rotate(180deg);
+}
