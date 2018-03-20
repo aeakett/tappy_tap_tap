@@ -41,38 +41,21 @@ body {
   }
 }
 
-.slider {
-  display: inline-block;
-  overflow: hidden;
-
-  .content {
-    position: relative;
-
-    .page {
-      float: left;
-    }
-  }
-}
-
-.page-content {
-  background: $dark-black;
-  border-radius: 20px;
-  display: inline-block;
-  margin: .5em;
-  padding: 1em;
-}
-
 .swiper-container {
   background-color: $dark-black;
-  border-radius: 25px;
+  border-radius: 20px;
   height: 100%;
   width: 100%;
 }
 
+.swiper-slide {
+  margin: .5em;
+  padding: 1em;
+}
 
 .swiper-button-next,
 .swiper-button-prev {
-  background-image: url("../img/pagerArrow.svg");
+  background-image: url('../img/pagerArrow.svg');
 }
 
 .swiper-button-next {
