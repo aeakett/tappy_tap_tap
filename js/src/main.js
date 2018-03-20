@@ -1,4 +1,23 @@
-$(document).ready(function() {
+//initialize swipers
+var boltSwiper = new Swiper ('.bolt-swiper-container', {
+   navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+   },
+   observer: true,
+   observeParents: true
+});
+
+var mBoltSwiper = new Swiper ('.mBolt-swiper-container', {
+   navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+   },
+   observer: true,
+   observeParents: true
+});
+
+$(document).ready(function () {
    $.each(bolt, function( index, value ) {
       $('#boltSize').append('<option value="'+index+'">'+value.size+'</option>');
    });
@@ -7,10 +26,10 @@ $(document).ready(function() {
 
    var boltInit=false;
    while (!boltInit) {
-      if ($('#boltTPI').parent().parent().hasClass('ui-select')) {console.log('Doing bolt post-init');
+      if ($('#boltTPI').parent().parent().hasClass('ui-select')) {
          boltSizeChange();
          boltInit=true;
-      } else {console.log('Checking...');}
+      }
    }
 
    $('#boltSize').change(function(){boltSizeChange();});
@@ -22,10 +41,10 @@ $(document).ready(function() {
 
    var mBoltInit=false;
    while (!mBoltInit) {
-      if ($('#mBoltTPI').parent().parent().hasClass('ui-select')) {console.log('Doing mBolt post-init');
+      if ($('#mBoltTPI').parent().parent().hasClass('ui-select')) {
          mBoltSizeChange();
          mBoltInit=true;
-      } else {console.log('mChecking...');}
+      }
    }
 
    $('#mBoltSize').change(function(){mBoltSizeChange();});
@@ -34,6 +53,7 @@ $(document).ready(function() {
 
    $('#class').change(function(){classChange();});
    $('#grade').change(function(){gradeChange();});
+
 });
 
 function classChange(){
@@ -62,6 +82,8 @@ function gradeChange(){
          $('#gradeImage').attr('src', 'img/grade8.svg');
          break;
    }
+   console.log('mySwiper');
+   console.log(mySwiper);
 }
 
 function boltSizeChange(){
@@ -141,6 +163,4 @@ function formatFraction(frac){
 
 function quoteToPrime(quotedString){
    return quotedString;
-   /*return quotedString.replace(/"/g, '&Prime;');*/
 }
-

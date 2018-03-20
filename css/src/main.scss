@@ -54,19 +54,19 @@ body {
   }
 }
 
-.page {
-  height: 300px;
-  width: 300px;
-
-  .page-content {
-    background: $dark-black;
-    border-radius: 20px;
-    display: inline-block;
-    margin: .5em;
-    padding: 1em;
-  }
+.page-content {
+  background: $dark-black;
+  border-radius: 20px;
+  display: inline-block;
+  margin: .5em;
+  padding: 1em;
 }
 
-
+.swiper-container {
+  background-color: $dark-black;
+  border-radius: 25px;
+  height: 100%;
+  width: 100%;
+}
 
 
