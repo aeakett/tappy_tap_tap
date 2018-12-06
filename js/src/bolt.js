@@ -743,7 +743,7 @@ var mBolt=[
    {  
       "size":1.0,
       "major_dia":1.0,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.25,
             "minor_dia":0.693,
@@ -764,7 +764,7 @@ var mBolt=[
    {  
       "size":1.1,
       "major_dia":1.1,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.2,
             "minor_dia":0.855,
@@ -789,7 +789,7 @@ var mBolt=[
    {  
       "size":1.2,
       "major_dia":1.2,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.2,
             "minor_dia":0.955,
@@ -814,7 +814,7 @@ var mBolt=[
    {  
       "size":1.4,
       "major_dia":1.4,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.2,
             "minor_dia":1.155,
@@ -839,7 +839,7 @@ var mBolt=[
    {  
       "size":1.6,
       "major_dia":1.6,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.2,
             "minor_dia":1.355,
@@ -864,7 +864,7 @@ var mBolt=[
    {  
       "size":1.8,
       "major_dia":1.8,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.2,
             "minor_dia":1.555,
@@ -889,7 +889,7 @@ var mBolt=[
    {  
       "size":2.0,
       "major_dia":2.0,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.25,
             "minor_dia":1.693,
@@ -914,7 +914,7 @@ var mBolt=[
    {  
       "size":2.2,
       "major_dia":2.2,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.25,
             "minor_dia":1.893,
@@ -939,7 +939,7 @@ var mBolt=[
    {  
       "size":2.5,
       "major_dia":2.5,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.35,
             "minor_dia":2.071,
@@ -964,7 +964,7 @@ var mBolt=[
    {  
       "size":3.0,
       "major_dia":3.0,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.35,
             "minor_dia":2.571,
@@ -989,7 +989,7 @@ var mBolt=[
    {  
       "size":3.5,
       "major_dia":3.5,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.35,
             "minor_dia":3.071,
@@ -1014,7 +1014,7 @@ var mBolt=[
    {  
       "size":4.0,
       "major_dia":4.0,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.5,
             "minor_dia":3.387,
@@ -1029,7 +1029,6 @@ var mBolt=[
       "close_drill":4.3,
       "medium_drill":4.5,
       "free_drill":4.8,
-      "cap_head_size":"",
       "cap_head_size":"3 mm",
       "button_head_size":"2.5 mm",
       "flat_head_size":"2.5 mm",
@@ -1040,7 +1039,7 @@ var mBolt=[
    {  
       "size":4.5,
       "major_dia":4.5,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.5,
             "minor_dia":3.887,
@@ -1065,7 +1064,7 @@ var mBolt=[
    {  
       "size":5.0,
       "major_dia":5.0,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.5,
             "minor_dia":4.387,
@@ -1080,7 +1079,6 @@ var mBolt=[
       "close_drill":5.3,
       "medium_drill":5.5,
       "free_drill":5.8,
-      "cap_head_size":"",
       "cap_head_size":"4 mm",
       "button_head_size":"3 mm",
       "flat_head_size":"3 mm",
@@ -1091,7 +1089,7 @@ var mBolt=[
    {  
       "size":5.5,
       "major_dia":5.5,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.5,
             "minor_dia":4.887,
@@ -1111,7 +1109,7 @@ var mBolt=[
    {  
       "size":6.0,
       "major_dia":6.0,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.75,
             "minor_dia":5.08,
@@ -1136,7 +1134,7 @@ var mBolt=[
    {  
       "size":7.0,
       "major_dia":7.0,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.75,
             "minor_dia":6.08,
@@ -1161,7 +1159,7 @@ var mBolt=[
    {  
       "size":8.0,
       "major_dia":8.0,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.75,
             "minor_dia":7.08,
@@ -1191,7 +1189,7 @@ var mBolt=[
    {  
       "size":9.0,
       "major_dia":9.0,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.75,
             "minor_dia":8.08,
@@ -1221,7 +1219,7 @@ var mBolt=[
    {  
       "size":10,
       "major_dia":10,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.75,
             "minor_dia":9.08,
@@ -1251,12 +1249,12 @@ var mBolt=[
       "flat_head_size":"6 mm",
       "hexflange_head_size":"13 or 15 mm",
       "setScrew_head_size":"5 mm",
-      "hex_head_size":"15 or 16 or 17 mm"
+      "hex_head_size":"15, 16, or 17 mm"
    },
    {  
       "size":11,
       "major_dia":11,
-      "pitch":[  
+      "pitch":[
          {  
             "number":0.75,
             "minor_dia":10.08,
@@ -1286,7 +1284,7 @@ var mBolt=[
    {  
       "size":12,
       "major_dia":12,
-      "pitch":[  
+      "pitch":[
          {  
             "number":1.0,
             "minor_dia":10.773,
@@ -1321,7 +1319,7 @@ var mBolt=[
    {  
       "size":14,
       "major_dia":14,
-      "pitch":[  
+      "pitch":[
          {  
             "number":1.0,
             "minor_dia":12.773,
@@ -1356,7 +1354,7 @@ var mBolt=[
    {  
       "size":15,
       "major_dia":15,
-      "pitch":[  
+      "pitch":[
          {  
             "number":1.0,
             "minor_dia":13.773,
@@ -1381,7 +1379,7 @@ var mBolt=[
    {  
       "size":16,
       "major_dia":16,
-      "pitch":[  
+      "pitch":[
          {  
             "number":1.0,
             "minor_dia":14.773,
@@ -1411,7 +1409,7 @@ var mBolt=[
    {  
       "size":17,
       "major_dia":17,
-      "pitch":[  
+      "pitch":[
          {  
             "number":1.0,
             "minor_dia":15.773,
@@ -1436,7 +1434,7 @@ var mBolt=[
    {  
       "size":18,
       "major_dia":18,
-      "pitch":[  
+      "pitch":[
          {  
             "number":1.0,
             "minor_dia":16.773,
@@ -1471,7 +1469,7 @@ var mBolt=[
    {  
       "size":20,
       "major_dia":20,
-      "pitch":[  
+      "pitch":[
          {  
             "number":1.0,
             "minor_dia":18.773,
@@ -1506,7 +1504,7 @@ var mBolt=[
    {  
       "size":22,
       "major_dia":22,
-      "pitch":[  
+      "pitch":[
          {  
             "number":1.0,
             "minor_dia":20.773,
@@ -1541,7 +1539,7 @@ var mBolt=[
    {  
       "size":24,
       "major_dia":24,
-      "pitch":[  
+      "pitch":[
          {  
             "number":1.0,
             "minor_dia":22.773,
@@ -1576,7 +1574,7 @@ var mBolt=[
    {  
       "size":25,
       "major_dia":25,
-      "pitch":[  
+      "pitch":[
          {  
             "number":1.0,
             "minor_dia":23.773,
